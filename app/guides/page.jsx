@@ -5,14 +5,16 @@ export const dynamic = "force-dynamic";
 
 export default async function GuidesPage() {
   const db = await readDb();
+  const content = db.content || {};
   const news = visible(db.news || db.guides);
 
   return (
     <main>
       <section className="hero inner-hero">
         <div className="hero-copy">
-          <p className="eyebrow">Новини</p>
-          <h1>Матеріали DOUBLE DAMAGE</h1>
+          <p className="eyebrow">DOUBLE DAMAGE</p>
+          <h1>{text(content.guidesPageTitle) || "\u041d\u043e\u0432\u0438\u043d\u0438"}</h1>
+          <p className="lead">{text(content.guidesPageText)}</p>
         </div>
       </section>
       <section className="section">

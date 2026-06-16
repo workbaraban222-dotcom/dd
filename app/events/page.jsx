@@ -7,21 +7,23 @@ export const dynamic = "force-dynamic";
 
 export default async function EventsPage() {
   const db = await readDb();
+  const content = db.content || {};
   const events = visible(db.events);
 
   return (
     <main>
       <section className="hero inner-hero">
         <div className="hero-copy">
-          <p className="eyebrow">Події</p>
-          <h1>DOUBLE DAMAGE EVENTS</h1>
+          <p className="eyebrow">DOUBLE DAMAGE</p>
+          <h1>{text(content.eventsPageTitle) || "DOUBLE DAMAGE EVENTS"}</h1>
+          <p className="lead">{text(content.eventsPageText)}</p>
         </div>
       </section>
       <section className="section">
         <div className="content-grid">
           {events.map((event) => (
             <article className="content-card" key={event.id}>
-              <span className="tag acid">{event.date}</span>
+              {event.date ? <span className="tag acid">{event.date}</span> : null}
               <h3>{text(event.title)}</h3>
               <p>{text(event.place || event.location)}</p>
               <p>{text(event.text)}</p>
@@ -29,8 +31,8 @@ export default async function EventsPage() {
           ))}
         </div>
       </section>
-      <TelegramBlock content={db.content} />
-      <PartnerCta content={db.content} />
+      <TelegramBlock content={content} />
+      <PartnerCta content={content} />
     </main>
   );
 }

@@ -20,7 +20,7 @@ export default async function ShopPage({ searchParams }) {
     <main className="shop-page">
       <section className="hero inner-hero">
         <div className="hero-copy">
-          <p className="eyebrow">Магазин</p>
+          <p className="eyebrow">{"\u041c\u0430\u0433\u0430\u0437\u0438\u043d"}</p>
           <h1>{text(content.shopPageTitle) || "DOUBLE DAMAGE SHOP"}</h1>
         </div>
       </section>
@@ -32,10 +32,10 @@ export default async function ShopPage({ searchParams }) {
               <Link href="/shop" className={`shop-category-card home-category-card ${!selected ? "active" : ""}`}>
                 <span className="shop-category-icon">DD</span>
                 <span className="shop-category-copy">
-                  <strong>Всі</strong>
-                  <small>{products.length} товарів</small>
+                  <strong>{"\u0412\u0441\u0456"}</strong>
+                  <small>{products.length} {"\u0442\u043e\u0432\u0430\u0440\u0456\u0432"}</small>
                 </span>
-                <em aria-label="Відкрити розділ">+</em>
+                <em aria-label="\u0412\u0456\u0434\u043a\u0440\u0438\u0442\u0438 \u0440\u043e\u0437\u0434\u0456\u043b">+</em>
               </Link>
               {categories.map((category) => (
                 <CategoryCard
@@ -46,15 +46,15 @@ export default async function ShopPage({ searchParams }) {
               ))}
             </div>
             <div className="shop-controls">
-              <label>Сортувати за:
+              <label>{"\u0421\u043e\u0440\u0442\u0443\u0432\u0430\u0442\u0438 \u0437\u0430:"}
                 <select defaultValue="price-desc">
-                  <option value="price-desc">Ціна: від вищої до нижчої</option>
-                  <option value="price-asc">Ціна: від нижчої до вищої</option>
-                  <option value="name-asc">Назва: A-Z</option>
+                  <option value="price-desc">{"\u0426\u0456\u043d\u0430: \u0432\u0456\u0434 \u0432\u0438\u0449\u043e\u0457 \u0434\u043e \u043d\u0438\u0436\u0447\u043e\u0457"}</option>
+                  <option value="price-asc">{"\u0426\u0456\u043d\u0430: \u0432\u0456\u0434 \u043d\u0438\u0436\u0447\u043e\u0457 \u0434\u043e \u0432\u0438\u0449\u043e\u0457"}</option>
+                  <option value="name-asc">{"\u041d\u0430\u0437\u0432\u0430: A-Z"}</option>
                 </select>
               </label>
-              <label className="stock-only"><input type="checkbox" defaultChecked />Тільки в наявності</label>
-              <label className="shop-search"><span>Пошук</span><input type="search" placeholder="Найти товар" /></label>
+              <label className="stock-only"><input type="checkbox" defaultChecked />{"\u0422\u0456\u043b\u044c\u043a\u0438 \u0432 \u043d\u0430\u044f\u0432\u043d\u043e\u0441\u0442\u0456"}</label>
+              <label className="shop-search"><span>{"\u041f\u043e\u0448\u0443\u043a"}</span><input type="search" placeholder="\u041d\u0430\u0439\u0442\u0438 \u0442\u043e\u0432\u0430\u0440" /></label>
             </div>
             <div className="product-grid product-list is-grouped">
               {visibleCategories.map((category) => {
@@ -63,7 +63,7 @@ export default async function ShopPage({ searchParams }) {
                 return (
                   <section className="product-section-group" key={category.id}>
                     <div className="product-section-title">
-                      <span>Розділ</span>
+                      <span>{"\u0420\u043e\u0437\u0434\u0456\u043b"}</span>
                       <strong>{text(category.title)}</strong>
                       <small>{category.subcategories?.join(" · ") || category.sub || ""}</small>
                     </div>

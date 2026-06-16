@@ -15,10 +15,10 @@ export default async function HomePage() {
   const news = visible(db.news || db.guides).slice(0, 3);
   const advantages = visible(db.advantages);
   const stats = db.stats?.length ? db.stats : [
-    { value: products.length, label: { ua: "позицій в каталозі" } },
-    { value: "24/7", label: { ua: "підтримка замовлень" } },
-    { value: "5", label: { ua: "років досвіду" } },
-    { value: "10%", label: { ua: "стартовий промокод" } },
+    { value: products.length, label: { ua: "\u043f\u043e\u0437\u0438\u0446\u0456\u0439 \u0432 \u043a\u0430\u0442\u0430\u043b\u043e\u0437\u0456" } },
+    { value: "24/7", label: { ua: "\u043f\u0456\u0434\u0442\u0440\u0438\u043c\u043a\u0430 \u0437\u0430\u043c\u043e\u0432\u043b\u0435\u043d\u044c" } },
+    { value: "5", label: { ua: "\u0440\u043e\u043a\u0456\u0432 \u0434\u043e\u0441\u0432\u0456\u0434\u0443" } },
+    { value: "10%", label: { ua: "\u0441\u0442\u0430\u0440\u0442\u043e\u0432\u0438\u0439 \u043f\u0440\u043e\u043c\u043e\u043a\u043e\u0434" } },
   ];
 
   return (
@@ -29,11 +29,11 @@ export default async function HomePage() {
           <h1>{text(content.heroTitle)}</h1>
           <p className="lead">{text(content.heroLead)}</p>
           <div className="hero-actions">
-            <Link className="button primary" href="/shop">Дивитись каталог</Link>
-            <a className="button ghost" href={content.telegramUrl || "https://t.me/"} target="_blank" rel="noreferrer">Написати в Telegram</a>
+            <Link className="button primary" href="/shop">{"\u0414\u0438\u0432\u0438\u0442\u0438\u0441\u044c \u043a\u0430\u0442\u0430\u043b\u043e\u0433"}</Link>
+            <a className="button ghost" href={content.telegramUrl || "https://t.me/"} target="_blank" rel="noreferrer">{"\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u0438 \u0432 Telegram"}</a>
           </div>
           <div className="promo">
-            <span>Промокод на перше замовлення</span>
+            <span>{"\u041f\u0440\u043e\u043c\u043e\u043a\u043e\u0434 \u043d\u0430 \u043f\u0435\u0440\u0448\u0435 \u0437\u0430\u043c\u043e\u0432\u043b\u0435\u043d\u043d\u044f"}</span>
             <strong>{content.promoCode || "DAMAGE10"}</strong>
           </div>
           <div className="hero-trust">
@@ -45,7 +45,7 @@ export default async function HomePage() {
         <div className="hero-visual" aria-label="DOUBLE DAMAGE visual" />
       </section>
 
-      <section className="payment-strip" aria-label="Способи оплати">
+      <section className="payment-strip" aria-label="\u0421\u043f\u043e\u0441\u043e\u0431\u0438 \u043e\u043f\u043b\u0430\u0442\u0438">
         {(db.paymentStrip || []).map((item, index) => (
           <article key={index}>
             <span>{item.icon || item.value || "DD"}</span>
@@ -63,8 +63,8 @@ export default async function HomePage() {
 
       <section className="section catalog-section home-category-section" id="catalog">
         <div className="section-heading compact">
-          <p className="eyebrow">Каталог</p>
-          <h2>Розділи магазину</h2>
+          <p className="eyebrow">{"\u041a\u0430\u0442\u0430\u043b\u043e\u0433"}</p>
+          <h2>{"\u0420\u043e\u0437\u0434\u0456\u043b\u0438 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0443"}</h2>
         </div>
         <div className="shop-category-grid home-shop-categories">
           {categories.map((category) => (
@@ -80,12 +80,12 @@ export default async function HomePage() {
       <section className="section advantages-section">
         <div className="section-heading compact">
           <p className="eyebrow">DOUBLE DAMAGE</p>
-          <h2>Наші переваги</h2>
+          <h2>{"\u041d\u0430\u0448\u0456 \u043f\u0435\u0440\u0435\u0432\u0430\u0433\u0438"}</h2>
         </div>
         <div className="advantage-grid">
           {advantages.map((item, index) => (
             <article key={index}>
-              <span>{item.icon || "✓"}</span>
+              <span>{item.icon || "\u2713"}</span>
               <p>{text(item.text || item.title || item)}</p>
             </article>
           ))}
@@ -96,9 +96,9 @@ export default async function HomePage() {
 
       <section className="section work-section">
         <div className="section-heading compact">
-          <p className="eyebrow">Процес роботи</p>
-          <h2>Як ми працюємо?</h2>
-          <p>Простий процес від вибору до отримання</p>
+          <p className="eyebrow">{"\u041f\u0440\u043e\u0446\u0435\u0441 \u0440\u043e\u0431\u043e\u0442\u0438"}</p>
+          <h2>{"\u042f\u043a \u043c\u0438 \u043f\u0440\u0430\u0446\u044e\u0454\u043c\u043e?"}</h2>
+          <p>{"\u041f\u0440\u043e\u0441\u0442\u0438\u0439 \u043f\u0440\u043e\u0446\u0435\u0441 \u0432\u0456\u0434 \u0432\u0438\u0431\u043e\u0440\u0443 \u0434\u043e \u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f"}</p>
         </div>
         <div className="work-steps">
           {visible(db.workSteps).map((item, index) => (
@@ -113,8 +113,8 @@ export default async function HomePage() {
 
       <section className="section home-news-section">
         <div className="section-heading compact">
-          <p className="eyebrow">Новини</p>
-          <h2>Останні матеріали</h2>
+          <p className="eyebrow">{"\u041d\u043e\u0432\u0438\u043d\u0438"}</p>
+          <h2>{"\u041e\u0441\u0442\u0430\u043d\u043d\u0456 \u043c\u0430\u0442\u0435\u0440\u0456\u0430\u043b\u0438"}</h2>
         </div>
         <div className="content-grid guides-grid">
           {news.map((item) => (
@@ -123,7 +123,7 @@ export default async function HomePage() {
               <span className="tag acid">{item.category || "News"}</span>
               <h3>{text(item.title)}</h3>
               <p>{text(item.excerpt || item.text)}</p>
-              <Link className="button ghost read-more-link" href="/guides">Дізнатися більше</Link>
+              <Link className="button ghost read-more-link" href="/guides">{"\u0414\u0456\u0437\u043d\u0430\u0442\u0438\u0441\u044f \u0431\u0456\u043b\u044c\u0448\u0435"}</Link>
             </article>
           ))}
         </div>
@@ -134,12 +134,12 @@ export default async function HomePage() {
       <section className="final-cta">
         <div>
           <p className="eyebrow">{text(content.finalEyebrow) || "Traffic supply"}</p>
-          <h2>{text(content.finalTitle) || "Потрібні розхідники?"}</h2>
+          <h2>{text(content.finalTitle) || "\u041f\u043e\u0442\u0440\u0456\u0431\u043d\u0456 \u0440\u043e\u0437\u0445\u0456\u0434\u043d\u0438\u043a\u0438?"}</h2>
           <p>{text(content.finalText) || text(content.heroLead)}</p>
         </div>
         <div className="hero-actions">
-          <Link className="button primary" href="/shop" data-hero-catalog>Дивитись каталог</Link>
-          <a className="button ghost" href={content.telegramUrl || "https://t.me/"} target="_blank" rel="noreferrer">Написати в Telegram</a>
+          <Link className="button primary" href="/shop" data-hero-catalog>{"\u0414\u0438\u0432\u0438\u0442\u0438\u0441\u044c \u043a\u0430\u0442\u0430\u043b\u043e\u0433"}</Link>
+          <a className="button ghost" href={content.telegramUrl || "https://t.me/"} target="_blank" rel="noreferrer">{"\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u0438 \u0432 Telegram"}</a>
         </div>
       </section>
     </main>

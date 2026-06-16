@@ -7806,3 +7806,84 @@ html[data-theme="light"] .backend-form select {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Next parity fixes: product rows open like static index.html */
+body:not(.admin-body) .shop-page .product-card,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-card {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: 66px minmax(0, 1fr) 96px 96px 172px !important;
+  column-gap: 14px !important;
+  padding: 14px !important;
+  overflow: hidden !important;
+}
+
+body:not(.admin-body) .shop-page .product-card-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  border-radius: inherit !important;
+}
+
+body:not(.admin-body) .shop-page .product-card :is(.product-media-wrap, .product-info, .product-price-col, .product-stock-col) {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body:not(.admin-body) .shop-page .product-buy-col,
+body:not(.admin-body) .shop-page .product-buy-col .product-actions,
+body:not(.admin-body) .shop-page .product-buy-col button {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+body:not(.admin-body) .shop-page .product-buy-col .product-actions,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-buy-col .product-actions {
+  width: 172px !important;
+  min-width: 172px !important;
+  max-width: 172px !important;
+  display: grid !important;
+  grid-template-columns: 122px 42px !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+body:not(.admin-body) .shop-page .product-buy-col .product-actions button[data-add-cart]:not(.add-cart-mini),
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-buy-col .product-actions button[data-add-cart]:not(.add-cart-mini) {
+  width: 122px !important;
+  min-width: 122px !important;
+  max-width: 122px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+}
+
+body:not(.admin-body) .shop-page .product-buy-col .product-actions .add-cart-mini,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-buy-col .product-actions .add-cart-mini {
+  width: 42px !important;
+  min-width: 42px !important;
+  max-width: 42px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body:not(.admin-body) .product-detail-actions {
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 760px) {
+  body:not(.admin-body) .shop-page .product-card,
+  html[data-theme="light"] body:not(.admin-body) .shop-page .product-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  body:not(.admin-body) .shop-page .product-buy-col .product-actions {
+    width: 172px !important;
+  }
+}
