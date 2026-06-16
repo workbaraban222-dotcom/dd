@@ -1,0 +1,35 @@
+{
+  "content": {
+    "telegramUrl": "https://t.me/",
+    "promoCode": "DAMAGE10"
+  },
+  "categories": [
+    { "id": "bundle", "icon": "DD", "title": "Bundle", "text": "Готовые наборы под запуск", "sub": "STARTER / LAUNCH / TEAM" },
+    { "id": "ads", "icon": "AD", "title": "Ads", "text": "Рекламные профили и бизнес-сетапы", "sub": "BM / ADS / PROFILE" },
+    { "id": "social", "icon": "TG", "title": "Social", "text": "Соцсети и коммуникации", "sub": "TELEGRAM / INSTAGRAM / TIKTOK" },
+    { "id": "mail", "icon": "@", "title": "Почта", "text": "Почтовые аккаунты и сервисы", "sub": "GMAIL / HOTMAIL / FIRSTMAIL" },
+    { "id": "proxy", "icon": "IP", "title": "Прокси", "text": "Инфраструктура под запуск", "sub": "MOBILE / RESIDENTIAL / PRIVATE" },
+    { "id": "tools", "icon": "TL", "title": "Инструменты", "text": "Сервисы и digital-утилиты", "sub": "BROWSER / UTILS / API" }
+  ],
+  "products": [
+    { "id": "damage-launch-kit", "category": "bundle", "subcategory": "Launch", "badge": "DD", "name": "Damage Launch Kit", "text": "Комплект соцсетей, почты и рекламного профиля для старта.", "price": 119, "stock": 10, "status": "Bundle", "image": "" },
+    { "id": "starter-pack", "category": "bundle", "subcategory": "Starter", "badge": "DD", "name": "Social Starter Pack", "text": "Набор аккаунтов для теста контента и первых запусков.", "price": 49, "stock": 10, "status": "Top", "image": "" },
+    { "id": "business-manager", "category": "ads", "subcategory": "BM", "badge": "BM", "name": "Business Manager", "text": "Сетап для командных рекламных процессов и масштабирования.", "price": 92, "stock": 10, "status": "Limited", "image": "" },
+    { "id": "business-profile", "category": "ads", "subcategory": "Profile", "badge": "BP", "name": "Business Profile", "text": "Профиль под рекламные задачи и прогрев кампаний.", "price": 64, "stock": 10, "status": "Ads", "image": "" },
+    { "id": "facebook-ads", "category": "ads", "subcategory": "Facebook", "badge": "FB", "name": "Facebook Ads Profile", "text": "Профиль под рекламные тесты, кампании и связки.", "price": 64, "stock": 10, "status": "Hot", "image": "" },
+    { "id": "telegram-utility", "category": "social", "subcategory": "Telegram", "badge": "TG", "name": "Telegram Utility", "text": "Рабочий комплект под коммуникацию и сервисные задачи.", "price": 35, "stock": 10, "status": "Fast", "image": "" },
+    { "id": "instagram-aged", "category": "social", "subcategory": "Instagram", "badge": "IG", "name": "Instagram Aged", "text": "Возрастные профили под контент, тесты и мягкий прогрев.", "price": 29, "stock": 10, "status": "In stock", "image": "" },
+    { "id": "tiktok-creator", "category": "social", "subcategory": "TikTok", "badge": "TT", "name": "TikTok Creator", "text": "Профили для контентных гипотез и быстрых запусков.", "price": 39, "stock": 10, "status": "In stock", "image": "" },
+    { "id": "gmail-workspace", "category": "mail", "subcategory": "Gmail", "badge": "GM", "name": "Gmail Workspace", "text": "Почтовые аккаунты под регистрацию и рабочие процессы.", "price": 18, "stock": 10, "status": "In stock", "image": "" }
+  ],
+  "news": [
+    { "id": "guide-media-buying", "category": "Арбитраж", "title": "Старт в media buying", "text": "Базовые правила подготовки аккаунтов, бюджетов и первых тестов." },
+    { "id": "guide-safety", "category": "Маркетинг", "title": "Безопасность аккаунтов", "text": "Что проверить перед запуском и передачей доступов." },
+    { "id": "news-crypto-payments", "category": "Крипто", "title": "Криптооплаты для команд", "text": "USDT, BTC и быстрые переводы для закупки digital-расходников." }
+  ],
+  "events": [
+    { "id": "event-affiliate-conf", "title": "Affiliate conf: весенний анонс", "date": "2026-07-20", "place": "Киев / online", "text": "Конференция про арбитраж, медиабаинг и рекламную инфраструктуру." }
+  ],
+  "orders": [],
+  "partnerLeads": []
+}
