@@ -47,7 +47,7 @@ export default function AdminPanel() {
   const stats = useMemo(() => [
     ["Категории", db.categories?.length || 0],
     ["Товары", db.products?.length || 0],
-    ["Новости", db.news?.length || 0],
+    ["Новости", (db.news || db.guides)?.length || 0],
     ["События", db.events?.length || 0],
     ["Заказы", db.orders?.length || 0],
     ["Заявки", db.partnerLeads?.length || 0],
@@ -59,7 +59,7 @@ export default function AdminPanel() {
         <div>
           <p className="eyebrow">Backend admin</p>
           <h1>DOUBLE DAMAGE CMS</h1>
-          <p>Редактирование живой базы сайта, заказов и заявок.</p>
+          <p>Редактирование живой базы сайта: категории отдельно, товары отдельно, новости, события, заказы и заявки.</p>
         </div>
         <div className="backend-admin-actions">
           <input value={token} onChange={(event) => setToken(event.target.value)} placeholder="ADMIN_TOKEN" />
@@ -80,13 +80,17 @@ export default function AdminPanel() {
       <section className="backend-admin-grid">
         <div className="backend-editor">
           <div className="backend-panel-title">
-            <h2>База данных</h2>
+            <h2>База данных сайта</h2>
             <span>{status}</span>
           </div>
           <textarea value={jsonText} onChange={(event) => setJsonText(event.target.value)} spellCheck="false" />
         </div>
 
         <aside className="backend-sidebar">
+          <h2>Что где менять</h2>
+          <article><strong>categories</strong><span>Категории и подкатегории магазина</span></article>
+          <article><strong>products</strong><span>Товары, цены, фото, наличие и описания</span></article>
+          <article><strong>content</strong><span>Главная, Telegram, партнерский блок и общие тексты</span></article>
           <h2>Новые заказы</h2>
           {(db.orders || []).slice(0, 6).map((order) => (
             <article key={order.id}>

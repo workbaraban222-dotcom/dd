@@ -1,19 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import { text } from "@/lib/text";
 
 export default function ProductOrderForm({ product }) {
   const [status, setStatus] = useState("");
+  const productName = text(product.name);
 
   async function submitOrder(event) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    setStatus("Создаем заказ...");
+    setStatus("Создаём заказ...");
     const response = await fetch("/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        items: [{ productId: product.id, name: product.name, price: product.price, qty: 1 }],
+        items: [{ productId: product.id, name: productName, price: product.price, qty: 1 }],
         contact: {
           telegram: form.get("telegram"),
           name: form.get("name"),

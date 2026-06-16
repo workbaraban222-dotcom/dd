@@ -8,13 +8,14 @@ export default function Footer() {
           <span className="brand-mark">DD</span>
           <span>DOUBLE DAMAGE</span>
         </Link>
-        <p>Dark digital marketplace для арбитражников, медиабаеров, SMM и Telegram-команд.</p>
+        <p>Digital marketplace для арбитражников, медиабаеров, SMM и Telegram-команд.</p>
       </div>
       <div className="footer-col">
         <strong>Навигация</strong>
         <Link href="/">Главная</Link>
         <Link href="/shop">Магазин</Link>
         <Link href="/guides">Новости</Link>
+        <Link href="/events">События</Link>
         <Link href="/partners">Партнеры</Link>
       </div>
     </footer>

@@ -2,31 +2,39 @@ import CategoryCard from "@/components/CategoryCard";
 import TelegramBlock from "@/components/TelegramBlock";
 import PartnerCta from "@/components/PartnerCta";
 import { readDb } from "@/lib/db";
-import { advantages } from "@/lib/data";
+import { text, visible } from "@/lib/text";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
-const advantageIcons = ["UP", "QA", "ID", "TD", "AC", "24", "RT", "SM"];
-
 export default async function HomePage() {
   const db = await readDb();
-  const { categories, products, news } = db;
+  const content = db.content || {};
+  const categories = visible(db.categories);
+  const products = visible(db.products);
+  const news = visible(db.news || db.guides).slice(0, 3);
+  const advantages = visible(db.advantages);
+  const stats = db.stats?.length ? db.stats : [
+    { value: products.length, label: { ua: "позицій в каталозі" } },
+    { value: "24/7", label: { ua: "підтримка замовлень" } },
+    { value: "5", label: { ua: "років досвіду" } },
+    { value: "10%", label: { ua: "стартовий промокод" } },
+  ];
 
   return (
     <main id="top">
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Расходники для арбитража</p>
-          <h1>Расходники для арбитража</h1>
-          <p className="lead">Аккаунты, сервисы, инструменты и digital-расходники для медиабаеров, Telegram-команд, SMM и трафик-проектов. Быстро. Жирно. Без лишнего шума.</p>
+          <p className="eyebrow">{text(content.heroEyebrow)}</p>
+          <h1>{text(content.heroTitle)}</h1>
+          <p className="lead">{text(content.heroLead)}</p>
           <div className="hero-actions">
-            <Link className="button primary" href="/shop">Смотреть каталог</Link>
-            <a className="button ghost" href={db.content.telegramUrl} target="_blank" rel="noreferrer">Написать в Telegram</a>
+            <Link className="button primary" href="/shop">Дивитись каталог</Link>
+            <a className="button ghost" href={content.telegramUrl || "https://t.me/"} target="_blank" rel="noreferrer">Написати в Telegram</a>
           </div>
           <div className="promo">
-            <span>Промокод на первый заказ</span>
-            <strong>{db.content.promoCode}</strong>
+            <span>Промокод на перше замовлення</span>
+            <strong>{content.promoCode || "DAMAGE10"}</strong>
           </div>
           <div className="hero-trust">
             <span>Guaranteed quality</span>
@@ -37,23 +45,26 @@ export default async function HomePage() {
         <div className="hero-visual" aria-label="DOUBLE DAMAGE visual" />
       </section>
 
-      <section className="payment-strip" aria-label="Способы оплаты">
-        <article><span>US</span><strong>USDT / CRYPTO</strong><small>TRC20, ERC20, BTC, ETH</small></article>
-        <article><span>UA</span><strong>UAH / CARD</strong><small>Перевод на карту</small></article>
-        <article><span>%</span><strong>Постоянным клиентам</strong><small>накопительная скидка 5-10%</small></article>
+      <section className="payment-strip" aria-label="Способи оплати">
+        {(db.paymentStrip || []).map((item, index) => (
+          <article key={index}>
+            <span>{item.icon || item.value || "DD"}</span>
+            <strong>{text(item.title)}</strong>
+            <small>{text(item.text)}</small>
+          </article>
+        ))}
       </section>
 
       <section className="stats-strip">
-        <div><strong>{products.length}</strong><span>позиций в каталоге</span></div>
-        <div><strong>24/7</strong><span>поддержка заказов</span></div>
-        <div><strong>5</strong><span>лет опыта</span></div>
-        <div><strong>10%</strong><span>стартовый промокод</span></div>
+        {stats.map((item, index) => (
+          <div key={index}><strong>{item.value}</strong><span>{text(item.label)}</span></div>
+        ))}
       </section>
 
-      <section className="section catalog-section home-category-section">
+      <section className="section catalog-section home-category-section" id="catalog">
         <div className="section-heading compact">
           <p className="eyebrow">Каталог</p>
-          <h2>Разделы магазина</h2>
+          <h2>Розділи магазину</h2>
         </div>
         <div className="shop-category-grid home-shop-categories">
           {categories.map((category) => (
@@ -69,39 +80,68 @@ export default async function HomePage() {
       <section className="section advantages-section">
         <div className="section-heading compact">
           <p className="eyebrow">DOUBLE DAMAGE</p>
-          <h2>Наши преимущества</h2>
+          <h2>Наші переваги</h2>
         </div>
         <div className="advantage-grid">
           {advantages.map((item, index) => (
-            <article key={item}>
-              <span>{advantageIcons[index]}</span>
-              <p>{item}</p>
+            <article key={index}>
+              <span>{item.icon || "✓"}</span>
+              <p>{text(item.text || item.title || item)}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <TelegramBlock />
+      <TelegramBlock content={content} />
+
+      <section className="section work-section">
+        <div className="section-heading compact">
+          <p className="eyebrow">Процес роботи</p>
+          <h2>Як ми працюємо?</h2>
+          <p>Простий процес від вибору до отримання</p>
+        </div>
+        <div className="work-steps">
+          {visible(db.workSteps).map((item, index) => (
+            <article key={index}>
+              <span>{index + 1}</span>
+              <h3>{text(item.title)}</h3>
+              <p>{text(item.text)}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="section home-news-section">
         <div className="section-heading compact">
-          <p className="eyebrow">Новости</p>
-          <h2>Последние материалы</h2>
+          <p className="eyebrow">Новини</p>
+          <h2>Останні матеріали</h2>
         </div>
         <div className="content-grid guides-grid">
           {news.map((item) => (
             <article className="content-card" key={item.id}>
               <div className="content-media placeholder-media">NEWS</div>
-              <span className="tag acid">{item.category}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <Link className="button ghost read-more-link" href="/guides">Узнать больше</Link>
+              <span className="tag acid">{item.category || "News"}</span>
+              <h3>{text(item.title)}</h3>
+              <p>{text(item.excerpt || item.text)}</p>
+              <Link className="button ghost read-more-link" href="/guides">Дізнатися більше</Link>
             </article>
           ))}
         </div>
       </section>
 
-      <PartnerCta />
+      <PartnerCta content={content} />
+
+      <section className="final-cta">
+        <div>
+          <p className="eyebrow">{text(content.finalEyebrow) || "Traffic supply"}</p>
+          <h2>{text(content.finalTitle) || "Потрібні розхідники?"}</h2>
+          <p>{text(content.finalText) || text(content.heroLead)}</p>
+        </div>
+        <div className="hero-actions">
+          <Link className="button primary" href="/shop" data-hero-catalog>Дивитись каталог</Link>
+          <a className="button ghost" href={content.telegramUrl || "https://t.me/"} target="_blank" rel="noreferrer">Написати в Telegram</a>
+        </div>
+      </section>
     </main>
   );
 }

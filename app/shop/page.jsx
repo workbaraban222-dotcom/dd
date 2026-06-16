@@ -1,30 +1,42 @@
+import Link from "next/link";
 import CategoryCard from "@/components/CategoryCard";
 import ProductCard from "@/components/ProductCard";
 import { readDb } from "@/lib/db";
+import { text, visible } from "@/lib/text";
 
 export const dynamic = "force-dynamic";
 
-export default async function ShopPage() {
-  const { categories, products } = await readDb();
+export default async function ShopPage({ searchParams }) {
+  const params = await searchParams;
+  const db = await readDb();
+  const content = db.content || {};
+  const categories = visible(db.categories);
+  const products = visible(db.products);
+  const selected = params?.category || "";
+  const filteredProducts = selected ? products.filter((product) => product.category === selected) : products;
+  const visibleCategories = selected ? categories.filter((category) => category.id === selected) : categories;
 
   return (
     <main className="shop-page">
       <section className="hero inner-hero">
         <div className="hero-copy">
           <p className="eyebrow">Магазин</p>
-          <h1>DOUBLE DAMAGE SHOP</h1>
+          <h1>{text(content.shopPageTitle) || "DOUBLE DAMAGE SHOP"}</h1>
         </div>
       </section>
 
       <section className="section catalog-section" id="catalog">
-        <div className="section-heading compact">
-          <p className="eyebrow">Каталог</p>
-          <h2>Разделы магазина</h2>
-        </div>
         <div className="shop-market-layout">
-          <a className="vip-banner left" href="#"><span>VIP PARTNER</span></a>
           <div className="shop-market-main">
             <div className="shop-category-grid">
+              <Link href="/shop" className={`shop-category-card home-category-card ${!selected ? "active" : ""}`}>
+                <span className="shop-category-icon">DD</span>
+                <span className="shop-category-copy">
+                  <strong>Всі</strong>
+                  <small>{products.length} товарів</small>
+                </span>
+                <em aria-label="Відкрити розділ">+</em>
+              </Link>
               {categories.map((category) => (
                 <CategoryCard
                   key={category.id}
@@ -34,34 +46,35 @@ export default async function ShopPage() {
               ))}
             </div>
             <div className="shop-controls">
-              <label>Сортировать:
+              <label>Сортувати за:
                 <select defaultValue="price-desc">
-                  <option value="price-desc">Цена: от высокой до низкой</option>
-                  <option value="price-asc">Цена: от низкой до высокой</option>
-                  <option value="name-asc">Название: A-Z</option>
+                  <option value="price-desc">Ціна: від вищої до нижчої</option>
+                  <option value="price-asc">Ціна: від нижчої до вищої</option>
+                  <option value="name-asc">Назва: A-Z</option>
                 </select>
               </label>
-              <label className="stock-only"><input type="checkbox" defaultChecked />Только в наличии</label>
-              <label className="shop-search"><span>Поиск</span><input type="search" placeholder="Найти товар" /></label>
+              <label className="stock-only"><input type="checkbox" defaultChecked />Тільки в наявності</label>
+              <label className="shop-search"><span>Пошук</span><input type="search" placeholder="Найти товар" /></label>
             </div>
             <div className="product-grid product-list is-grouped">
-              {categories.map((category) => {
-                const group = products.filter((product) => product.category === category.id);
+              {visibleCategories.map((category) => {
+                const group = filteredProducts.filter((product) => product.category === category.id);
                 if (!group.length) return null;
                 return (
                   <section className="product-section-group" key={category.id}>
                     <div className="product-section-title">
-                      <span>Раздел</span>
-                      <strong>{category.title}</strong>
-                      <small>{category.sub}</small>
+                      <span>Розділ</span>
+                      <strong>{text(category.title)}</strong>
+                      <small>{category.subcategories?.join(" · ") || category.sub || ""}</small>
                     </div>
-                    {group.map((product) => <ProductCard key={product.id} product={product} />)}
+                    {group.map((product) => (
+                      <ProductCard key={product.id} product={product} categoryTitle={text(category.title)} />
+                    ))}
                   </section>
                 );
               })}
             </div>
           </div>
-          <a className="vip-banner right" href="#"><span>VIP PARTNER</span></a>
         </div>
       </section>
     </main>

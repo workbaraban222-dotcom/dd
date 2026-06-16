@@ -1,8 +1,8 @@
 # DOUBLE DAMAGE Next + Backend
 
-Полная Next-версия сайта с серверным API.
+Готовая Next-версия сайта с серверным API, админкой и базой данных в `data/db.json`.
 
-## Запуск локально
+## Локальный запуск
 
 ```bash
 npm install
@@ -23,18 +23,29 @@ npm start
 
 Админка находится на `/admin`.
 
-Для защиты редактирования на сервере задай переменную:
+Чтобы защитить сохранение данных на сервере, задай переменную окружения:
 
 ```bash
 ADMIN_TOKEN=your-password
 ```
 
-Этот же токен вводится в поле `ADMIN_TOKEN` в админке.
+Этот же пароль вводится в поле `ADMIN_TOKEN` внутри админки перед сохранением.
+
+## Где менять данные
+
+- `content` - тексты главной, Telegram-блока, партнерского блока и общие настройки.
+- `categories` - категории магазина и подкатегории.
+- `products` - товары, цены, фото, наличие, описание.
+- `news` - новости.
+- `events` - события.
+- `partnersList` - партнеры.
+- `orders` - заявки покупателей.
+- `partnerLeads` - заявки партнеров.
 
 ## API
 
-- `GET /api/site` - вся база сайта
-- `PUT /api/site` - сохранить всю базу
+- `GET /api/site` - вся база сайта.
+- `PUT /api/site` - сохранить всю базу.
 - `GET/POST /api/categories`
 - `PUT/DELETE /api/categories/:id`
 - `GET/POST /api/products`
@@ -45,5 +56,3 @@ ADMIN_TOKEN=your-password
 - `PUT/DELETE /api/events/:id`
 - `GET/POST /api/orders`
 - `GET/POST /api/partner-leads`
-
-Данные лежат в `data/db.json`.
