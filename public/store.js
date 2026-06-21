@@ -9,7 +9,7 @@ function ddLooksBroken(value) {
 }
 
 function ddFixText(value) {
-  if (!ddLooksBroken(value)) return value;
+  if (typeof value !== "string") return value;
   const bytes = [];
   for (const char of value) {
     const code = char.charCodeAt(0);
@@ -494,6 +494,11 @@ function ddMergeStoreData(parsed = {}) {
 
 async function ddLoadServerStore() {
   try {
+    if (typeof window !== "undefined" && window.__DD_SERVER_DATA__) {
+      const merged = ddMergeStoreData(window.__DD_SERVER_DATA__);
+      localStorage.setItem(DD_STORAGE_KEY, JSON.stringify(merged));
+      return merged;
+    }
     const response = await fetch("/api/site", { cache: "no-store" });
     if (!response.ok) throw new Error("Store request failed");
     const serverData = await response.json();
