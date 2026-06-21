@@ -1,9 +1,16 @@
-import AdminPanel from "@/components/AdminPanel";
+import Script from "next/script";
+import StaticTemplate from "@/components/StaticTemplate";
 
+export const dynamic = "force-dynamic";
 export const metadata = {
   title: "DOUBLE DAMAGE CMS",
 };
 
 export default function AdminPage() {
-  return <AdminPanel />;
+  return (
+    <>
+      <StaticTemplate name="admin" />
+      <Script src="/admin.js?v=28" strategy="afterInteractive" />
+    </>
+  );
 }

@@ -1,15 +1,19 @@
-# DOUBLE DAMAGE Next + Backend
+# DOUBLE DAMAGE Next
 
-Готовая Next-версия сайта с серверным API, админкой и базой данных в `data/db.json`.
+Это Next-версия сайта, собранная 1:1 на основе рабочего `index.html/index.php`.
 
-## Локальный запуск
+## Запуск локально
 
 ```bash
 npm install
 npm run dev
 ```
 
-Сайт откроется на `http://localhost:3000`.
+Открыть:
+
+```text
+http://localhost:3000
+```
 
 ## Запуск на сервере
 
@@ -19,40 +23,23 @@ npm run build
 npm start
 ```
 
-## Админка
+## Страницы
 
-Админка находится на `/admin`.
+- `/` - главная
+- `/shop` - магазин
+- `/product?id=PRODUCT_ID` - страница товара
+- `/article?type=guides&id=ARTICLE_ID` - статья
+- `/article?type=events&id=EVENT_ID` - событие
+- `/guides` - новости
+- `/events` - события
+- `/partners` - партнёры
+- `/replace` - замена товара
+- `/admin` - админка
 
-Чтобы защитить сохранение данных на сервере, задай переменную окружения:
+## Что важно
 
-```bash
-ADMIN_TOKEN=your-password
-```
-
-Этот же пароль вводится в поле `ADMIN_TOKEN` внутри админки перед сохранением.
-
-## Где менять данные
-
-- `content` - тексты главной, Telegram-блока, партнерского блока и общие настройки.
-- `categories` - категории магазина и подкатегории.
-- `products` - товары, цены, фото, наличие, описание.
-- `news` - новости.
-- `events` - события.
-- `partnersList` - партнеры.
-- `orders` - заявки покупателей.
-- `partnerLeads` - заявки партнеров.
-
-## API
-
-- `GET /api/site` - вся база сайта.
-- `PUT /api/site` - сохранить всю базу.
-- `GET/POST /api/categories`
-- `PUT/DELETE /api/categories/:id`
-- `GET/POST /api/products`
-- `PUT/DELETE /api/products/:id`
-- `GET/POST /api/news`
-- `PUT/DELETE /api/news/:id`
-- `GET/POST /api/events`
-- `PUT/DELETE /api/events/:id`
-- `GET/POST /api/orders`
-- `GET/POST /api/partner-leads`
+- Витрина использует те же `store.js`, `script.js`, `styles.css`, что и идеальная HTML/PHP-версия.
+- Языки UA/ENG/RU переключаются тем же механизмом.
+- Товары открываются через `/product?id=...`.
+- Админка оставлена отдельной страницей `/admin`.
+- Данные витрины лежат в `public/store.js`.
