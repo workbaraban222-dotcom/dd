@@ -10,7 +10,7 @@ export default function AdminPage() {
   return (
     <>
       <StaticTemplate name="admin" />
-      <Script src="/admin.js?v=28" strategy="afterInteractive" />
+      <Script src="/admin.js?v=29" strategy="afterInteractive" />
     </>
   );
 }

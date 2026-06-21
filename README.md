@@ -1,21 +1,21 @@
 # DOUBLE DAMAGE Next
 
-Это Next-версия сайта, собранная 1:1 на основе рабочего `index.html/index.php`.
+Next-version of the DOUBLE DAMAGE site.
 
-## Запуск локально
+## Local run
 
 ```bash
 npm install
 npm run dev
 ```
 
-Открыть:
+Open:
 
 ```text
 http://localhost:3000
 ```
 
-## Запуск на сервере
+## Server run
 
 ```bash
 npm install
@@ -23,23 +23,29 @@ npm run build
 npm start
 ```
 
-## Страницы
+## Pages
 
-- `/` - главная
-- `/shop` - магазин
-- `/product?id=PRODUCT_ID` - страница товара
-- `/article?type=guides&id=ARTICLE_ID` - статья
-- `/article?type=events&id=EVENT_ID` - событие
-- `/guides` - новости
-- `/events` - события
-- `/partners` - партнёры
-- `/replace` - замена товара
-- `/admin` - админка
+- `/` - home
+- `/shop` - shop
+- `/product?id=PRODUCT_ID` - product page
+- `/article?type=guides&id=ARTICLE_ID` - news article
+- `/article?type=events&id=EVENT_ID` - event article
+- `/guides` - news
+- `/events` - events
+- `/partners` - partners
+- `/replace` - replacement page
+- `/admin` - admin panel
 
-## Что важно
+## Backend And Admin
 
-- Витрина использует те же `store.js`, `script.js`, `styles.css`, что и идеальная HTML/PHP-версия.
-- Языки UA/ENG/RU переключаются тем же механизмом.
-- Товары открываются через `/product?id=...`.
-- Админка оставлена отдельной страницей `/admin`.
-- Данные витрины лежат в `public/store.js`.
+- The public site loads shared data from `/api/site`.
+- The admin panel saves changes to `data/db.json` through `/api/site`.
+- Changes made in `/admin` are visible to all visitors after saving.
+- The server process must have write access to `data/db.json`.
+- `public/store.js` is only fallback/default data if the backend is unavailable.
+
+## Notes
+
+- Languages: UA / ENG / RU.
+- Product links use `/product?id=...`.
+- News and events open in the same tab through `/article`.

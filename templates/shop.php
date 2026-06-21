@@ -23,8 +23,8 @@
       <nav class="main-nav">
         <a href="index.php" data-i18n="home">Р“РѕР»РѕРІРЅР°</a>
         <a href="shop.php" data-i18n="shop">РњР°РіР°Р·РёРЅ</a>
-        <a href="guides.php" data-i18n="guides">Новости</a>
         <a href="events.php" data-i18n="events">РџРѕРґС–С—</a>
+        <a href="guides.php" data-i18n="guides">Новости</a>
         <a href="partners.php" data-i18n="partners">РџР°СЂС‚РЅРµСЂРё</a>
       </nav>
       <div class="header-tools">

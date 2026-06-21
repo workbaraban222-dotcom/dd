@@ -398,6 +398,7 @@ const DD_DEFAULT_DATA = {
       id: "partner-alpha",
       name: "Alpha Media",
       site: "https://example.com",
+      siteLabel: "SITE",
       promo: "DAMAGE",
       text: { ua: "Партнер по медіабаїнгу та рекламним запускам.", en: "Media buying and ad launch partner.", ru: "Партнер по медиабаингу и рекламным запускам." },
       logo: "",
@@ -465,6 +466,42 @@ function ddLoadStore() {
     fallback.visibility = ddNormalizeVisibility(fallback.visibility);
     fallback.coupons = ddNormalizeCoupons(fallback.coupons);
     return fallback;
+  }
+}
+
+function ddMergeStoreData(parsed = {}) {
+  const fixed = ddFixDeep(parsed || {});
+  const defaults = ddClone(DD_DEFAULT_DATA);
+  return {
+    ...defaults,
+    ...fixed,
+    content: { ...defaults.content, ...(fixed.content || {}) },
+    visibility: ddNormalizeVisibility(fixed.visibility || defaults.visibility),
+    coupons: ddNormalizeCoupons(fixed.coupons || defaults.coupons),
+    paymentStrip: fixed.paymentStrip || defaults.paymentStrip,
+    stats: fixed.stats || defaults.stats,
+    advantages: ddCleanAdvantages(fixed.advantages || defaults.advantages),
+    workSteps: fixed.workSteps || defaults.workSteps,
+    reviews: fixed.reviews || defaults.reviews,
+    categories: fixed.categories || defaults.categories,
+    products: fixed.products || defaults.products,
+    guides: fixed.guides || defaults.guides,
+    events: fixed.events || defaults.events,
+    partnersList: fixed.partnersList || defaults.partnersList,
+    faq: fixed.faq || defaults.faq,
+  };
+}
+
+async function ddLoadServerStore() {
+  try {
+    const response = await fetch("/api/site", { cache: "no-store" });
+    if (!response.ok) throw new Error("Store request failed");
+    const serverData = await response.json();
+    const merged = ddMergeStoreData(serverData);
+    localStorage.setItem(DD_STORAGE_KEY, JSON.stringify(merged));
+    return merged;
+  } catch {
+    return ddLoadStore();
   }
 }
 

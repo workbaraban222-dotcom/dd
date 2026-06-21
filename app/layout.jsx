@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning>
         <BodyClassSync />
         {children}
-        <Script src="/store.js?v=8" strategy="beforeInteractive" />
-        <Script src="/script.js?v=40" strategy="afterInteractive" />
+        <Script src="/store.js?v=9" strategy="beforeInteractive" />
+        <Script src="/script.js?v=45" strategy="afterInteractive" />
       </body>
     </html>
   );

@@ -8,9 +8,8 @@ export default function BodyClassSync() {
 
   useEffect(() => {
     document.body.classList.toggle("admin-body", pathname === "/admin");
-    document.body.classList.toggle("shop-page", pathname === "/shop");
     return () => {
-      document.body.classList.remove("admin-body", "shop-page");
+      document.body.classList.remove("admin-body");
     };
   }, [pathname]);
 

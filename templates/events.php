@@ -18,7 +18,7 @@
     <header class="site-header">
       <a class="brand" href="index.php"><span class="brand-mark" data-brand-mark>DD</span><span data-brand-name>DOUBLE DAMAGE</span></a>
       <nav class="main-nav">
-        <a href="index.php" data-i18n="home">Головна</a><a href="shop.php" data-i18n="shop">Магазин</a><a href="guides.php" data-i18n="guides">Новости</a><a href="events.php" data-i18n="events">Події</a><a href="partners.php" data-i18n="partners">Партнери</a>
+        <a href="index.php" data-i18n="home">Головна</a><a href="shop.php" data-i18n="shop">Магазин</a><a href="events.php" data-i18n="events">Події</a><a href="guides.php" data-i18n="guides">Новости</a><a href="partners.php" data-i18n="partners">Партнери</a>
       </nav>
       <div class="header-tools"><div class="lang-switch" data-lang-switch></div><button class="cart-button" type="button" data-cart-open><span data-i18n="cart">РљРѕС€РёРє</span><strong data-cart-count>0</strong></button></div>
     </header>

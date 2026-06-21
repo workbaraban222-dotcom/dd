@@ -109,6 +109,7 @@ const ADMIN_LABELS_RU = {
     icon: "РРєРѕРЅРєР°",
     name: "РќР°Р·РІР°РЅРёРµ",
     site: "РЎСЃС‹Р»РєР° РЅР° СЃР°Р№С‚",
+    siteLabel: "Текст кнопки SITE",
     promo: "РџСЂРѕРјРѕРєРѕРґ",
     price: "Р¦РµРЅР°",
     stockQty: "РќР°Р»РёС‡РёРµ",
@@ -409,6 +410,7 @@ function partnerCard(item, index) {
         ${visibleToggle(item)}
         <label>РќР°Р·РІР°РЅРёРµ<input data-field="name" value="${item.name}" /></label>
         <label>РЎР°Р№С‚<input data-field="site" value="${item.site}" /></label>
+        <label>Текст кнопки SITE<input data-field="siteLabel" value="${item.siteLabel || "SITE"}" /></label>
         <label>РџСЂРѕРјРѕРєРѕРґ<input data-field="promo" value="${item.promo}" /></label>
         ${multiInputs("item", "text", item.text, "РћРїРёСЃР°РЅРёРµ", true)}
       </div>
@@ -627,10 +629,23 @@ function autoProduct(index) {
   renderAdmin();
 }
 
-function saveAll() {
+async function saveAll() {
   collectContent();
   ddSaveStore(adminData);
-  setStatus("РЎРѕС…СЂР°РЅРµРЅРѕ. РћР±РЅРѕРІРёС‚Рµ РѕС‚РєСЂС‹С‚СѓСЋ РІРєР»Р°РґРєСѓ СЃР°Р№С‚Р°.");
+  setStatus("Сохраняю на сервер...");
+  try {
+    const response = await fetch("/api/site", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(adminData),
+    });
+    if (!response.ok) throw new Error("Save failed");
+    adminData = await response.json();
+    ddSaveStore(adminData);
+    setStatus("Сохранено на сервер. Изменения увидят все посетители.");
+  } catch {
+    setStatus("Не удалось сохранить на сервер. Проверь backend/права на data/db.json.");
+  }
 }
 
 form?.addEventListener("input", (event) => {
@@ -799,7 +814,7 @@ document.addEventListener("click", (event) => {
   }
 
   if (event.target.closest("[data-add-partner]")) {
-    adminData.partnersList.unshift({ id: uid("partner"), name: "New partner", site: "https://example.com", promo: "DAMAGE", text: { ua: "РћРїРёСЃ РїР°СЂС‚РЅРµСЂР°", en: "Partner description", ru: "РћРїРёСЃР°РЅРёРµ РїР°СЂС‚РЅРµСЂР°" }, logo: "" });
+    adminData.partnersList.unshift({ id: uid("partner"), name: "New partner", site: "https://example.com", siteLabel: "SITE", promo: "DAMAGE", text: { ua: "РћРїРёСЃ РїР°СЂС‚РЅРµСЂР°", en: "Partner description", ru: "РћРїРёСЃР°РЅРёРµ РїР°СЂС‚РЅРµСЂР°" }, logo: "" });
     renderAdmin();
   }
 
@@ -809,8 +824,13 @@ document.addEventListener("click", (event) => {
   }
 });
 
-updateAuthView();
-renderAdmin();
-document.documentElement.classList.add("dd-ready");
+async function initAdmin() {
+  adminData = await ddLoadServerStore();
+  updateAuthView();
+  renderAdmin();
+  document.documentElement.classList.add("dd-ready");
+}
+
+initAdmin();
 
 

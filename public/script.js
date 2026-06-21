@@ -1,4 +1,4 @@
-﻿const data = ddLoadStore();
+﻿let data = ddLoadStore();
 let currentLang = ddLang();
 const DD_THEME_KEY = "doubleDamageThemeV2";
 const cartPanel = document.querySelector(".cart-panel");
@@ -7,6 +7,7 @@ const cartCountNode = document.querySelector("[data-cart-count]");
 const cartTotalNode = document.querySelector("[data-cart-total]");
 const cart = new Map();
 let appliedCoupon = null;
+let cartToastTimer = null;
 const shopState = {
   filter: "all",
   sort: "price-desc",
@@ -76,6 +77,38 @@ function isVisible(key) {
 
 function visibleItems(items = []) {
   return (items || []).filter((item) => item.visible !== false);
+}
+
+function showCartToast(productName = "") {
+  let toast = document.querySelector("[data-cart-toast]");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "cart-toast";
+    toast.setAttribute("data-cart-toast", "");
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+
+  const message = {
+    ua: "Додано в кошик",
+    en: "Added to cart",
+    ru: "Добавлено в корзину",
+  }[currentLang] || "Добавлено в корзину";
+
+  toast.innerHTML = `
+    <span class="cart-toast-icon">✓</span>
+    <span>
+      <strong>${message}</strong>
+      ${productName ? `<small>${productName}</small>` : ""}
+    </span>
+  `;
+  toast.classList.add("is-visible");
+
+  clearTimeout(cartToastTimer);
+  cartToastTimer = setTimeout(() => {
+    toast.classList.remove("is-visible");
+  }, 2200);
 }
 
 function setHidden(selector, hidden) {
@@ -248,6 +281,22 @@ function renderThemeToggle() {
   tools.insertBefore(button, tools.querySelector("[data-cart-open]") || null);
 }
 
+function normalizeMainNav() {
+  const items = [
+    ["index", "home"],
+    ["shop", "shop"],
+    ["events", "events"],
+    ["guides", "guides"],
+    ["partners", "partners"],
+  ];
+
+  document.querySelectorAll(".main-nav").forEach((nav) => {
+    nav.innerHTML = items
+      .map(([page, key]) => `<a href="${ddPage(page)}" data-i18n="${key}">${t(key)}</a>`)
+      .join("");
+  });
+}
+
 function renderStaticLabels() {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
@@ -389,7 +438,8 @@ function renderFooter() {
     </div>
     <div class="footer-col">
       <strong>Контакты</strong>
-      <a data-telegram-link href="${data.content.telegramUrl || "#"}" target="_blank" rel="noreferrer">Telegram</a>
+      <a data-telegram-link href="${data.content.telegramUrl || "#"}" target="_blank" rel="noreferrer">Поддержка</a>
+      <a data-telegram-link href="${data.content.telegramUrl || "#"}" target="_blank" rel="noreferrer">Наш Telegram канал</a>
       <span>© 2026 ${data.content.brandName}</span>
     </div>
   `;
@@ -754,7 +804,7 @@ function renderInfoPage() {
             <h3>${item.name}</h3>
             <p>${ddText(item.text, currentLang)}</p>
             <strong>${item.promo}</strong>
-            <a class="button ghost" href="${item.site}" target="_blank" rel="noreferrer">Site</a>
+            <a class="button ghost" href="${item.site}" target="_blank" rel="noreferrer">${item.siteLabel || "SITE"}</a>
           </article>
         `;
       }
@@ -763,23 +813,23 @@ function renderInfoPage() {
         const eventDate = item.date ? `<span>Дата: ${item.date}</span>` : "";
         const eventPlace = ddText(item.location, currentLang) ? `<span>Место: ${ddText(item.location, currentLang)}</span>` : "";
         return `
-          <article class="content-card ${item.size || ""}" onclick="window.open('${href}', '_blank')">
+          <article class="content-card ${item.size || ""}" onclick="location.href='${href}'">
             ${mediaBlock(item.image, "EVENT", "content-media")}
             <div class="event-meta-line">${eventDate}${eventPlace}</div>
             <h3>${ddText(item.title, currentLang)}</h3>
             <p>${ddText(item.text, currentLang)}</p>
-            <a class="button ghost read-more-link" href="${href}" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">Узнать больше</a>
+            <a class="button ghost read-more-link" href="${href}" onclick="event.stopPropagation()">Узнать больше</a>
           </article>
         `;
       }
       const href = `${ddPage("article")}?type=guides&id=${encodeURIComponent(item.id)}`;
       return `
-        <article class="content-card ${item.size || ""}" onclick="window.open('${href}', '_blank')">
+        <article class="content-card ${item.size || ""}" onclick="location.href='${href}'">
           ${mediaBlock(item.image, "NEWS", "content-media")}
           <span class="tag acid">${newsCategoryLabel(item.category || "arbitraj")}</span>
           <h3>${ddText(item.title, currentLang)}</h3>
           <p>${ddText(item.excerpt, currentLang)}</p>
-          <a class="button ghost read-more-link" href="${href}" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">Узнать больше</a>
+          <a class="button ghost read-more-link" href="${href}" onclick="event.stopPropagation()">Узнать больше</a>
         </article>
       `;
     })
@@ -885,12 +935,12 @@ function renderHomeNews() {
   node.innerHTML = posts.map((item) => {
     const href = `${ddPage("article")}?type=guides&id=${encodeURIComponent(item.id)}`;
     return `
-      <article class="content-card" onclick="window.open('${href}', '_blank')">
+      <article class="content-card" onclick="location.href='${href}'">
         ${mediaBlock(item.image, "NEWS", "content-media")}
         <span class="tag acid">${newsCategoryLabel(item.category || "arbitraj")}</span>
         <h3>${ddText(item.title, currentLang)}</h3>
         <p>${ddText(item.excerpt, currentLang)}</p>
-        <a class="button ghost read-more-link" href="${href}" target="_blank" rel="noreferrer" onclick="event.stopPropagation()">Узнать больше</a>
+        <a class="button ghost read-more-link" href="${href}" onclick="event.stopPropagation()">Узнать больше</a>
       </article>
     `;
   }).join("");
@@ -996,6 +1046,7 @@ function renderCart() {
 
 function renderAll() {
   renderLangSwitch();
+  normalizeMainNav();
   renderStaticLabels();
   renderContent();
   renderFilters();
@@ -1052,6 +1103,7 @@ document.addEventListener("click", (event) => {
     item.qty += 1;
     cart.set(product.id, item);
     renderCart();
+    showCartToast(localized.nameText);
     if (!addButton.hasAttribute("data-cart-quiet")) openCart();
   }
 
@@ -1136,10 +1188,16 @@ if (form) {
   });
 }
 
-applyTheme();
-renderThemeToggle();
-renderAll();
-document.documentElement.classList.add("dd-ready");
+async function initSite() {
+  applyTheme();
+  data = await ddLoadServerStore();
+  renderThemeToggle();
+  renderAll();
+  document.documentElement.classList.add("dd-ready");
+}
+
+initSite();
+
 
 
 

@@ -18,7 +18,7 @@
     <header class="site-header">
       <a class="brand" href="index.php"><span class="brand-mark" data-brand-mark>DD</span><span data-brand-name>DOUBLE DAMAGE</span></a>
       <nav class="main-nav">
-        <a href="index.php" data-i18n="home">Р“Р»Р°РІРЅР°СЏ</a><a href="shop.php" data-i18n="shop">РњР°РіР°Р·РёРЅ</a><a href="guides.php" data-i18n="guides">РќРѕРІРѕСЃС‚Рё</a><a href="events.php" data-i18n="events">РЎРѕР±С‹С‚РёСЏ</a><a href="partners.php" data-i18n="partners">РџР°СЂС‚РЅРµСЂС‹</a>
+        <a href="index.php" data-i18n="home">Р“Р»Р°РІРЅР°СЏ</a><a href="shop.php" data-i18n="shop">РњР°РіР°Р·РёРЅ</a><a href="events.php" data-i18n="events">РЎРѕР±С‹С‚РёСЏ</a><a href="guides.php" data-i18n="guides">РќРѕРІРѕСЃС‚Рё</a><a href="partners.php" data-i18n="partners">РџР°СЂС‚РЅРµСЂС‹</a>
       </nav>
       <div class="header-tools"><div class="lang-switch" data-lang-switch></div><a class="telegram-pill" data-telegram-link href="#" target="_blank" rel="noreferrer">Telegram</a><button class="cart-button" type="button" data-cart-open><span data-i18n="cart">РљРѕСЂР·РёРЅР°</span><strong data-cart-count>0</strong></button></div>
     </header>
