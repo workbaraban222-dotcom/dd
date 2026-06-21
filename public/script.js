@@ -1189,11 +1189,16 @@ if (form) {
 }
 
 async function initSite() {
-  applyTheme();
-  data = await ddLoadServerStore();
-  renderThemeToggle();
-  renderAll();
-  document.documentElement.classList.add("dd-ready");
+  try {
+    applyTheme();
+    data = await ddLoadServerStore();
+    renderThemeToggle();
+    renderAll();
+  } catch (error) {
+    console.error("DOUBLE DAMAGE init failed", error);
+  } finally {
+    document.documentElement.classList.add("dd-ready");
+  }
 }
 
 initSite();

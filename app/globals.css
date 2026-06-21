@@ -50,10 +50,12 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 
 html.dd-boot:not(.dd-ready) body {
-  visibility: visible;
+  visibility: hidden;
 }
 
 .cart-toast {
