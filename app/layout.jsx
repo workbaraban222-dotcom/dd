@@ -10,11 +10,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="uk" suppressHydrationWarning>
+    <html lang="uk" className="dd-boot" suppressHydrationWarning>
       <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: "html.dd-boot:not(.dd-ready) body{visibility:hidden!important}html{overflow-y:scroll;scrollbar-gutter:stable;overflow-x:hidden}",
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
-            __html: "try{document.documentElement.classList.add('dd-boot');document.documentElement.dataset.theme=localStorage.getItem('doubleDamageThemeV2')==='light'?'light':'dark'}catch(e){}",
+            __html: "try{document.documentElement.dataset.theme=localStorage.getItem('doubleDamageThemeV2')==='light'?'light':'dark'}catch(e){}",
           }}
         />
       </head>
