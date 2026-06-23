@@ -1,9 +1,10 @@
-﻿<!doctype html>
-<html lang="ru">
+<!doctype html>
+<html lang="ru" class="dd-boot">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script>
+        
+    <style>html.dd-boot:not(.dd-ready) body{visibility:hidden!important}html{overflow-y:scroll;scrollbar-gutter:stable both-edges;overflow-x:hidden}</style><script>
       (function () {
         try {
           document.documentElement.classList.add('dd-boot');
@@ -16,7 +17,8 @@
       name="description"
       content="DOUBLE DAMAGE - магазин digital-расходников, аккаунтов, профилей и готовых сетапов."
     />
-  <link rel="stylesheet" href="styles.css?v=97" />
+  <link rel="stylesheet" href="styles.css?v=106" />
+  <?php require_once __DIR__ . '/partials/bootstrap.php'; dd_bootstrap_script(); ?>
   </head>
   <body>
     <header class="site-header">
@@ -25,21 +27,18 @@
         <span data-brand-name>DOUBLE DAMAGE</span>
       </a>
 
-      <nav class="main-nav" aria-label="РћСЃРЅРѕРІРЅР°СЏ РЅР°РІРёРіР°С†РёСЏ">
-        <a href="index.php" data-i18n="home">Р“РѕР»РѕРІРЅР°</a>
-        <a href="shop.php" data-i18n="shop">РњР°РіР°Р·РёРЅ</a>
-        <a href="events.php" data-i18n="events">РџРѕРґС–С—</a>
-        <a href="guides.php" data-i18n="guides">Новости</a>
-        <a href="partners.php" data-i18n="partners">РџР°СЂС‚РЅРµСЂРё</a>
+      <nav class="main-nav">
+        <a href="index.php" data-i18n="home">Головна</a>
+        <a href="shop.php" data-i18n="shop">Магазин</a>
+        <a href="events.php" data-i18n="events">Події</a>
+        <a href="guides.php" data-i18n="guides">Новини</a>
+        <a href="partners.php" data-i18n="partners">Партнери</a>
       </nav>
 
       <div class="header-tools">
-        <div class="lang-switch" data-lang-switch></div>
-        <a class="telegram-pill" data-telegram-link href="#" target="_blank" rel="noreferrer">Telegram</a>
-        <button class="cart-button" type="button" data-cart-open>
-          <span data-i18n="cart">РљРѕС€РёРє</span>
-          <strong data-cart-count>0</strong>
-        </button>
+        <div class="lang-switch" data-lang-switch><button class="active" type="button" data-lang="ua">UA</button><button type="button" data-lang="en">ENG</button><button type="button" data-lang="ru">RU</button></div>
+        
+        <a class="replace-pill" href="replace.php" data-replace-link>Заміна товару</a><button class="theme-toggle" type="button" data-theme-toggle>Light</button><button class="cart-button" type="button" data-cart-open><span data-i18n="cart">Кошик</span><strong data-cart-count>0</strong></button>
       </div>
     </header>
 
@@ -241,10 +240,13 @@
       </div>
     </footer>
 
-    <script src="store.js?v=7"></script>
-    <script src="script.js?v=39"></script>
+    <script src="store.js?v=13"></script>
+    <script src="script.js?v=50"></script>
   </body>
 </html>
+
+
+
 
 
 

@@ -1,9 +1,10 @@
-﻿<!doctype html>
-<html lang="ru">
+<!doctype html>
+<html lang="ru" class="dd-boot">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script>
+        
+    <style>html.dd-boot:not(.dd-ready) body{visibility:hidden!important}html{overflow-y:scroll;scrollbar-gutter:stable both-edges;overflow-x:hidden}</style><script>
       (function () {
         try {
           document.documentElement.classList.add('dd-boot');
@@ -12,8 +13,9 @@
         } catch (e) {}
       })();
     </script><title>Админка | DOUBLE DAMAGE</title>
-  <link rel="stylesheet" href="styles.css?v=97" />
-  <link rel="stylesheet" href="admin.css?v=17" />
+  <link rel="stylesheet" href="styles.css?v=106" />
+  <link rel="stylesheet" href="admin.css?v=18" />
+  <?php require_once __DIR__ . '/partials/bootstrap.php'; dd_bootstrap_script(); ?>
   </head>
   <body class="admin-body">
     <section class="admin-login" data-login-screen>
@@ -35,7 +37,7 @@
       </a>
       <div class="header-tools">
         <button class="theme-toggle" type="button" data-admin-logout>Выйти</button>
-        <button class="cart-button" type="button" data-reset>Сбросить</button>
+        <a class="replace-pill" href="replace.php" data-replace-link>Заміна товару</a><button class="theme-toggle" type="button" data-theme-toggle>Light</button><button class="cart-button" type="button" data-reset>Сбросить</button>
         <a class="profile-pill" href="index.php"><span></span>На сайт</a>
       </div>
     </header>
@@ -227,10 +229,13 @@
       </div>
     </div>
 
-    <script src="store.js?v=7"></script>
-  <script src="admin.js?v=27"></script>
+    <script src="store.js?v=13"></script>
+  <script src="admin.js?v=31"></script>
   </body>
 </html>
+
+
+
 
 
 

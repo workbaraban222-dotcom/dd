@@ -1,51 +1,54 @@
-# DOUBLE DAMAGE Next
+# DOUBLE DAMAGE Next.js
 
-Next-version of the DOUBLE DAMAGE site.
+Финальная Next.js-версия сайта 1в1 с текущей PHP-версией.
 
-## Local run
+## Локальный запуск
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open:
+Сайт: `http://localhost:3000`
 
-```text
-http://localhost:3000
+Админка: `http://localhost:3000/admin`
+
+## Деплой на Vercel
+
+1. Залей папку проекта в GitHub.
+2. Импортируй проект в Vercel.
+3. Framework: `Next.js`.
+4. Build command: `npm run build`.
+5. Output менять не нужно.
+
+## База для админки
+
+Локально сайт использует `data/db.json`.
+
+На Vercel файловая система не хранит изменения постоянно, поэтому для рабочей админки подключи Vercel KV или Upstash Redis и добавь переменные:
+
+```env
+KV_REST_API_URL=...
+KV_REST_API_TOKEN=...
 ```
 
-## Server run
+Можно также использовать Upstash-имена:
 
-```bash
-npm install
-npm run build
-npm start
+```env
+UPSTASH_REDIS_REST_URL=...
+UPSTASH_REDIS_REST_TOKEN=...
 ```
 
-## Pages
+После этого админка сохраняет изменения в общую базу, и их видят все посетители.
 
-- `/` - home
-- `/shop` - shop
-- `/product?id=PRODUCT_ID` - product page
-- `/article?type=guides&id=ARTICLE_ID` - news article
-- `/article?type=events&id=EVENT_ID` - event article
-- `/guides` - news
-- `/events` - events
-- `/partners` - partners
-- `/replace` - replacement page
-- `/admin` - admin panel
+## Страницы
 
-## Backend And Admin
-
-- The public site loads shared data from `/api/site`.
-- The admin panel saves changes to `data/db.json` through `/api/site`.
-- Changes made in `/admin` are visible to all visitors after saving.
-- The server process must have write access to `data/db.json`.
-- `public/store.js` is only fallback/default data if the backend is unavailable.
-
-## Notes
-
-- Languages: UA / ENG / RU.
-- Product links use `/product?id=...`.
-- News and events open in the same tab through `/article`.
+- `/`
+- `/shop`
+- `/product?id=...`
+- `/guides`
+- `/events`
+- `/article?type=guides&id=...`
+- `/partners`
+- `/replace`
+- `/admin`
