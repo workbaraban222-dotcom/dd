@@ -52,3 +52,15 @@ UPSTASH_REDIS_REST_TOKEN=...
 - `/partners`
 - `/replace`
 - `/admin`
+
+## Supabase persistence (Vercel)
+
+1. In Supabase open `SQL Editor`, paste `SUPABASE_SETUP.sql`, and run it once.
+2. In Vercel Project Settings add these Production environment variables:
+   - `SUPABASE_URL`
+   - `SUPABASE_SECRET_KEY`
+3. Redeploy the project.
+
+On the first request, the current `data/db.json` is copied automatically into the
+`site_db` table. After that, admin changes are stored permanently in Supabase.
+Do not expose `SUPABASE_SECRET_KEY` in frontend code or GitHub.
