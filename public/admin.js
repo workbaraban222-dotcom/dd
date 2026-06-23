@@ -26,63 +26,63 @@ const editors = {
 
 const VISIBILITY_GROUPS = [
   {
-    title: "РЁР°РїРєР°",
+    title: "Шапка",
     items: [
-      ["header", "Р’СЃСЏ С€Р°РїРєР°"],
-      ["headerNav", "РњРµРЅСЋ: Р“Р»Р°РІРЅР°СЏ / РњР°РіР°Р·РёРЅ / РќРѕРІРѕСЃС‚Рё"],
-      ["langSwitch", "РџРµСЂРµРєР»СЋС‡Р°С‚РµР»СЊ СЏР·С‹РєРѕРІ"],
-      ["themeToggle", "РљРЅРѕРїРєР° С‚РµРјС‹"],
-      ["telegramHeaderButton", "РљРЅРѕРїРєР° Telegram РІ С€Р°РїРєРµ"],
-      ["adminButton", "РљРЅРѕРїРєР° РђРґРјРёРЅРєР°"],
-      ["cartButton", "РљРЅРѕРїРєР° РєРѕСЂР·РёРЅС‹"],
+      ["header", "Вся шапка"],
+      ["headerNav", "Меню: Главная / Магазин / Новости"],
+      ["langSwitch", "Переключатель языков"],
+      ["themeToggle", "Кнопка темы"],
+      ["telegramHeaderButton", "Кнопка Telegram в шапке"],
+      ["adminButton", "Кнопка Админка"],
+      ["cartButton", "Кнопка корзины"],
     ],
   },
   {
-    title: "Р“Р»Р°РІРЅР°СЏ",
+    title: "Главная",
     items: [
-      ["hero", "РџРµСЂРІС‹Р№ СЌРєСЂР°РЅ РїРѕР»РЅРѕСЃС‚СЊСЋ"],
-      ["heroEyebrow", "РњР°Р»РµРЅСЊРєР°СЏ РїРѕРґРїРёСЃСЊ РЅР°Рґ РіР»Р°РІРЅС‹Рј Р·Р°РіРѕР»РѕРІРєРѕРј"],
-      ["heroTitle", "Р“Р»Р°РІРЅС‹Р№ Р·Р°РіРѕР»РѕРІРѕРє"],
-      ["heroLead", "РўРµРєСЃС‚ РїРѕРґ РіР»Р°РІРЅС‹Рј Р·Р°РіРѕР»РѕРІРєРѕРј"],
-      ["heroCatalogButton", "РљРЅРѕРїРєР° РЎРјРѕС‚СЂРµС‚СЊ РєР°С‚Р°Р»РѕРі"],
-      ["heroTelegramButton", "РљРЅРѕРїРєР° РќР°РїРёСЃР°С‚СЊ РІ Telegram"],
-      ["heroPromo", "РџСЂРѕРјРѕРєРѕРґ"],
-      ["heroTrust", "РўСЂРё РїРѕРґРїРёСЃРё РїРѕРґ РїСЂРѕРјРѕРєРѕРґРѕРј"],
-      ["heroImage", "РљР°СЂС‚РёРЅРєР° СЃРїСЂР°РІР°"],
-      ["paymentStrip", "Р‘Р»РѕРє РѕРїР»Р°С‚С‹ РїРѕРґ РїРµСЂРІС‹Рј СЌРєСЂР°РЅРѕРј"],
-      ["stats", "Р‘Р»РѕРє С†РёС„СЂ"],
-      ["drops", "Р“РѕСЂСЏС‡РёРµ РїСЂРµРґР»РѕР¶РµРЅРёСЏ"],
-      ["advantages", "РќР°С€Рё РїСЂРµРёРјСѓС‰РµСЃС‚РІР°"],
-      ["homeCategories", "Р Р°Р·РґРµР»С‹ РјР°РіР°Р·РёРЅР° РЅР° РіР»Р°РІРЅРѕР№"],
-      ["pages", "РЎС‚Р°СЂС‹Р№ Р±Р»РѕРє СЃС‚СЂР°РЅРёС†"],
-      ["telegramBlock", "Telegram-Р±Р»РѕРє"],
-      ["workSteps", "РљР°Рє РјС‹ СЂР°Р±РѕС‚Р°РµРј"],
-      ["reviews", "РћС‚Р·С‹РІС‹"],
-      ["homeNews", "РќРѕРІРѕСЃС‚Рё РЅР° РіР»Р°РІРЅРѕР№"],
-      ["partnerCta", "Р‘Р»РѕРє РЎС‚Р°С‚СЊ РїР°СЂС‚РЅРµСЂРѕРј"],
-      ["contact", "Р¤РѕСЂРјР° Р·Р°СЏРІРєРё"],
+      ["hero", "Первый экран полностью"],
+      ["heroEyebrow", "Маленькая подпись над главным заголовком"],
+      ["heroTitle", "Главный заголовок"],
+      ["heroLead", "Текст под главным заголовком"],
+      ["heroCatalogButton", "Кнопка Смотреть каталог"],
+      ["heroTelegramButton", "Кнопка Написать в Telegram"],
+      ["heroPromo", "Промокод"],
+      ["heroTrust", "Три подписи под промокодом"],
+      ["heroImage", "Картинка справа"],
+      ["paymentStrip", "Блок оплаты под первым экраном"],
+      ["stats", "Блок цифр"],
+      ["drops", "Горячие предложения"],
+      ["advantages", "Наши преимущества"],
+      ["homeCategories", "Разделы магазина на главной"],
+      ["pages", "Старый блок страниц"],
+      ["telegramBlock", "Telegram-блок"],
+      ["workSteps", "Как мы работаем"],
+      ["reviews", "Отзывы"],
+      ["homeNews", "Новости на главной"],
+      ["partnerCta", "Блок Стать партнером"],
+      ["contact", "Форма заявки"],
       ["faq", "FAQ"],
-      ["finalCta", "Р¤РёРЅР°Р»СЊРЅС‹Р№ CTA"],
+      ["finalCta", "Финальный CTA"],
       ["footer", "Footer"],
     ],
   },
   {
-    title: "РњР°РіР°Р·РёРЅ Рё СЃС‚СЂР°РЅРёС†С‹",
+    title: "Магазин и страницы",
     items: [
-      ["shopHero", "Р’РµСЂС…РЅРёР№ Р±Р»РѕРє РјР°РіР°Р·РёРЅР°"],
-      ["shopCategories", "РљР°С‚РµРіРѕСЂРёРё РјР°РіР°Р·РёРЅР°"],
-      ["shopFilters", "Р¤РёР»СЊС‚СЂС‹ Рё СЃРѕСЂС‚РёСЂРѕРІРєР°"],
-      ["shopProducts", "РЎРїРёСЃРѕРє С‚РѕРІР°СЂРѕРІ"],
-      ["shopVipBanners", "VIP-Р±Р°РЅРЅРµСЂС‹"],
-      ["infoHero", "Р’РµСЂС…РЅРёР№ Р±Р»РѕРє РќРѕРІРѕСЃС‚Рё / РЎРѕР±С‹С‚РёСЏ / РџР°СЂС‚РЅРµСЂС‹"],
+      ["shopHero", "Верхний блок магазина"],
+      ["shopCategories", "Категории магазина"],
+      ["shopFilters", "Фильтры и сортировка"],
+      ["shopProducts", "Список товаров"],
+      ["shopVipBanners", "VIP-баннеры"],
+      ["infoHero", "Верхний блок Новости / События / Партнеры"],
     ],
   },
 ];
 
 const NEWS_ADMIN_CATEGORIES = [
-  ["arbitraj", "РђСЂР±РёС‚СЂР°Р¶"],
-  ["kripto", "РљСЂРёРїС‚РѕРІР°Р»СЋС‚Р°"],
-  ["marketing", "РњР°СЂРєРµС‚РёРЅРі"],
+  ["arbitraj", "Арбитраж"],
+  ["kripto", "Криптовалюта"],
+  ["marketing", "Маркетинг"],
 ];
 
 const COUNTRY_FLAG_OPTIONS = [
@@ -105,47 +105,47 @@ const COUNTRY_FLAG_OPTIONS = [
 
 const ADMIN_LABELS_RU = {
   fields: {
-    id: "ID РєР°С‚РµРіРѕСЂРёРё",
-    icon: "РРєРѕРЅРєР°",
-    name: "РќР°Р·РІР°РЅРёРµ",
-    site: "РЎСЃС‹Р»РєР° РЅР° СЃР°Р№С‚",
+    id: "ID категории",
+    icon: "Иконка",
+    name: "Название",
+    site: "Ссылка на сайт",
     siteLabel: "Текст кнопки SITE",
-    promo: "РџСЂРѕРјРѕРєРѕРґ",
-    price: "Р¦РµРЅР°",
-    stockQty: "РќР°Р»РёС‡РёРµ",
-    countryFlag: "Р¤Р»Р°Рі СЃС‚СЂР°РЅС‹",
-    category: "РљР°С‚РµРіРѕСЂРёСЏ",
-    badge: "Р‘РµР№РґР¶",
-    status: "РЎС‚Р°С‚СѓСЃ",
-    inStock: "Р’ РЅР°Р»РёС‡РёРё",
-    drop: "РџРѕРєР°Р·С‹РІР°С‚СЊ РЅР° РіР»Р°РІРЅРѕР№",
-    featured: "РђРєС†РµРЅС‚РЅР°СЏ РєР°СЂС‚РѕС‡РєР°",
-    size: "Р Р°Р·РјРµСЂ РєР°СЂС‚РѕС‡РєРё",
-    date: "Р”Р°С‚Р°",
-    value: "Р—РЅР°С‡РµРЅРёРµ",
+    promo: "Промокод",
+    price: "Цена",
+    stockQty: "Наличие",
+    countryFlag: "Флаг страны",
+    category: "Категория",
+    badge: "Бейдж",
+    status: "Статус",
+    inStock: "В наличии",
+    drop: "Показывать на главной",
+    featured: "Акцентная карточка",
+    size: "Размер карточки",
+    date: "Дата",
+    value: "Значение",
     code: "Промокод",
     discount: "Скидка %",
   },
   i18n: {
-    title: "Р—Р°РіРѕР»РѕРІРѕРє",
-    name: "РќР°Р·РІР°РЅРёРµ",
-    text: "РўРµРєСЃС‚",
-    description: "РћРїРёСЃР°РЅРёРµ",
-    categoryLabel: "РџРѕРґРїРёСЃСЊ РєР°С‚РµРіРѕСЂРёРё",
-    status: "РЎС‚Р°С‚СѓСЃ",
-    excerpt: "РљРѕСЂРѕС‚РєРѕРµ РѕРїРёСЃР°РЅРёРµ",
-    body: "РўРµРєСЃС‚ СЃС‚Р°С‚СЊРё",
-    location: "РњРµСЃС‚Рѕ",
-    question: "Р’РѕРїСЂРѕСЃ",
-    answer: "РћС‚РІРµС‚",
-    label: "РџРѕРґРїРёСЃСЊ",
+    title: "Заголовок",
+    name: "Название",
+    text: "Текст",
+    description: "Описание",
+    categoryLabel: "Подпись категории",
+    status: "Статус",
+    excerpt: "Короткое описание",
+    body: "Текст статьи",
+    location: "Место",
+    question: "Вопрос",
+    answer: "Ответ",
+    label: "Подпись",
   },
   images: {
-    categories: "РљР°СЂС‚РёРЅРєР° РєР°С‚РµРіРѕСЂРёРё",
-    products: "РљР°СЂС‚РёРЅРєР° С‚РѕРІР°СЂР°",
-    guides: "РћР±Р»РѕР¶РєР° РЅРѕРІРѕСЃС‚Рё",
-    events: "РљР°СЂС‚РёРЅРєР° СЃРѕР±С‹С‚РёСЏ",
-    partnersList: "Р›РѕРіРѕС‚РёРї РїР°СЂС‚РЅРµСЂР°",
+    categories: "Картинка категории",
+    products: "Картинка товара",
+    guides: "Обложка новости",
+    events: "Картинка события",
+    partnersList: "Логотип партнера",
   },
 };
 
@@ -197,7 +197,7 @@ function field(name) {
 }
 
 function imagePreview(src) {
-  return src ? `<div class="image-preview filled" style="background-image:url('${src}')"></div>` : `<div class="image-preview">РќРµС‚ РєР°СЂС‚РёРЅРєРё</div>`;
+  return src ? `<div class="image-preview filled" style="background-image:url('${src}')"></div>` : `<div class="image-preview">Нет картинки</div>`;
 }
 
 function categoryOptions(selected) {
@@ -244,9 +244,9 @@ function normalizeAdminData() {
       image: "",
       title: rawMulti(sample?.categoryLabel || id),
       text: {
-        ua: "Р РѕР·РґС–Р» С‚РѕРІР°СЂС–РІ",
+        ua: "Розділ товарів",
         en: "Product section",
-        ru: "Р Р°Р·РґРµР» С‚РѕРІР°СЂРѕРІ",
+        ru: "Раздел товаров",
       },
     });
   });
@@ -293,18 +293,18 @@ function categoryCard(category, index) {
       <div class="admin-card-title">
         <div>
           <strong>${ddText(category.title, "ua") || category.id}</strong>
-          <small>${count} С‚РѕРІР°СЂРѕРІ В· Р“Р»Р°РІРЅР°СЏ + РњР°РіР°Р·РёРЅ</small>
+          <small>${count} товаров · Главная + Магазин</small>
         </div>
-        <button class="danger-button" type="button" data-remove="categories" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button>
+        <button class="danger-button" type="button" data-remove="categories" data-index="${index}">Удалить</button>
       </div>
       ${imagePreview(category.image)}
-      <label class="wide">РљР°СЂС‚РёРЅРєР° СЂР°Р·РґРµР»Р° / Р»РѕРіРѕС‚РёРї<input type="file" accept="image/*" data-image-list="categories" data-index="${index}" data-image-key="image" /></label>
+      <label class="wide">Картинка раздела / логотип<input type="file" accept="image/*" data-image-list="categories" data-index="${index}" data-image-key="image" /></label>
       <div class="admin-card-grid">
         ${visibleToggle(category)}
-        <label>ID СЂР°Р·РґРµР»Р°<input data-field="id" value="${category.id}" placeholder="google" /></label>
-        <label>Р—РЅР°Рє РµСЃР»Рё РЅРµС‚ РєР°СЂС‚РёРЅРєРё<input data-field="icon" maxlength="4" value="${category.icon || ""}" /></label>
-        ${multiInputs("item", "title", category.title, "РќР°Р·РІР°РЅРёРµ")}
-        ${multiInputs("item", "text", category.text, "РћРїРёСЃР°РЅРёРµ", true)}
+        <label>ID раздела<input data-field="id" value="${category.id}" placeholder="google" /></label>
+        <label>Знак если нет картинки<input data-field="icon" maxlength="4" value="${category.icon || ""}" /></label>
+        ${multiInputs("item", "title", category.title, "Название")}
+        ${multiInputs("item", "text", category.text, "Описание", true)}
         <label class="wide">Подкатегории строкой<input data-field="subcategories" value="${category.subcategories || ""}" placeholder="GMAIL · HOTMAIL · FIRSTMAIL" /></label>
       </div>
     </article>
@@ -320,7 +320,7 @@ function fillContent() {
     const key = node.dataset.contentPreview;
     node.classList.toggle("filled", Boolean(adminData.content[key]));
     node.style.backgroundImage = adminData.content[key] ? `url('${adminData.content[key]}')` : "";
-    node.textContent = adminData.content[key] ? "" : "РќРµС‚ РєР°СЂС‚РёРЅРєРё";
+    node.textContent = adminData.content[key] ? "" : "Нет картинки";
   });
 }
 
@@ -328,36 +328,36 @@ function productCard(product, index) {
   return `
     <article class="admin-card" data-row="products" data-index="${index}">
       <div class="admin-card-title">
-        <strong>${ddText(product.name, "ua") || "РќРѕРІРёР№ С‚РѕРІР°СЂ"}</strong>
+        <strong>${ddText(product.name, "ua") || "Новый товар"}</strong>
         <div class="admin-actions">
-          <button class="cart-button" type="button" data-auto-product="${index}">РђРІС‚РѕРїРµСЂРµРІРѕРґ</button>
-          <button class="danger-button" type="button" data-remove="products" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button>
+          <button class="cart-button" type="button" data-auto-product="${index}">Автоперевод</button>
+          <button class="danger-button" type="button" data-remove="products" data-index="${index}">Удалить</button>
         </div>
       </div>
       ${imagePreview(product.image)}
-      <label class="wide">РљР°СЂС‚РёРЅРєР° С‚РѕРІР°СЂР°<input type="file" accept="image/*" data-image-list="products" data-index="${index}" data-image-key="image" /></label>
+      <label class="wide">Картинка товара<input type="file" accept="image/*" data-image-list="products" data-index="${index}" data-image-key="image" /></label>
       <div class="admin-card-grid">
         ${visibleToggle(product)}
-        ${multiInputs("item", "name", product.name, "РќР°Р·РІР°РЅРёРµ")}
-        ${multiInputs("item", "description", product.description, "РћРїРёСЃР°РЅРёРµ", true)}
+        ${multiInputs("item", "name", product.name, "Название")}
+        ${multiInputs("item", "description", product.description, "Описание", true)}
         ${multiInputs("item", "details", product.details, "Доп. информация на странице товара", true)}
-        <label>Р¦РµРЅР°<input data-field="price" type="number" min="0" value="${product.price}" /></label>
+        <label>Цена<input data-field="price" type="number" min="0" value="${product.price}" /></label>
         <label>Количество в наличии<input data-field="stockQty" type="number" min="0" value="${product.stockQty ?? 0}" /></label>
         <label>Флаг страны аккаунта
           <select data-field="countryFlag">${flagOptions(product.countryFlag || "")}</select>
         </label>
-        <label>РљР°С‚РµРіРѕСЂРёСЏ
+        <label>Категория
           <select data-field="category">
             ${categoryOptions(product.category)}
           </select>
         </label>
         <label>Подкатегория товара<input data-field="subcategory" value="${product.subcategory || ""}" placeholder="GMAIL / HOTMAIL / BM / FARM" /></label>
-        ${multiInputs("item", "categoryLabel", product.categoryLabel, "РџРѕРґРїРёСЃСЊ РєР°С‚РµРіРѕСЂРёРё")}
-        <label>Р‘РµР№РґР¶<input data-field="badge" maxlength="4" value="${product.badge}" /></label>
-        ${multiInputs("item", "status", product.status, "РЎС‚Р°С‚СѓСЃ")}
-        <label class="check-row"><input data-field="inStock" type="checkbox" ${product.inStock !== false ? "checked" : ""} />Р’ РЅР°Р»РёС‡РёРё</label>
-        <label class="check-row"><input data-field="drop" type="checkbox" ${product.drop ? "checked" : ""} />РџРѕРєР°Р·С‹РІР°С‚СЊ РІ РґСЂРѕРїР°С…</label>
-        <label class="check-row"><input data-field="featured" type="checkbox" ${product.featured ? "checked" : ""} />РђРєС†РµРЅС‚РЅР°СЏ РєР°СЂС‚РѕС‡РєР°</label>
+        ${multiInputs("item", "categoryLabel", product.categoryLabel, "Подпись категории")}
+        <label>Бейдж<input data-field="badge" maxlength="4" value="${product.badge}" /></label>
+        ${multiInputs("item", "status", product.status, "Статус")}
+        <label class="check-row"><input data-field="inStock" type="checkbox" ${product.inStock !== false ? "checked" : ""} />В наличии</label>
+        <label class="check-row"><input data-field="drop" type="checkbox" ${product.drop ? "checked" : ""} />Показывать в дропах</label>
+        <label class="check-row"><input data-field="featured" type="checkbox" ${product.featured ? "checked" : ""} />Акцентная карточка</label>
       </div>
     </article>
   `;
@@ -366,18 +366,18 @@ function productCard(product, index) {
 function guideCard(item, index) {
   return `
     <article class="admin-card" data-row="guides" data-index="${index}">
-      <div class="admin-card-title"><strong>${ddText(item.title, "ua")}</strong><button class="danger-button" type="button" data-remove="guides" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${ddText(item.title, "ua")}</strong><button class="danger-button" type="button" data-remove="guides" data-index="${index}">Удалить</button></div>
       ${imagePreview(item.image)}
-      <label class="wide">Р—Р°РіР»Р°РІРЅР°СЏ РєР°СЂС‚РёРЅРєР°<input type="file" accept="image/*" data-image-list="guides" data-index="${index}" data-image-key="image" /></label>
+      <label class="wide">Заглавная картинка<input type="file" accept="image/*" data-image-list="guides" data-index="${index}" data-image-key="image" /></label>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        <label>РўРµРјР°С‚РёРєР°
+        <label>Тематика
           <select data-field="category">${newsCategoryOptions(item.category || "arbitraj")}</select>
         </label>
-        ${multiInputs("item", "title", item.title, "Р—Р°РіРѕР»РѕРІРѕРє")}
-        ${multiInputs("item", "excerpt", item.excerpt, "РљРѕСЂРѕС‚РєРѕРµ РѕРїРёСЃР°РЅРёРµ", true)}
-        ${multiInputs("item", "body", item.body, "РўРµРєСЃС‚ СЃС‚Р°С‚СЊРё", true)}
-        <label>Р Р°Р·РјРµСЂ РєР°СЂС‚РѕС‡РєРё<select data-field="size"><option value="medium" ${item.size === "medium" ? "selected" : ""}>medium</option><option value="large" ${item.size === "large" ? "selected" : ""}>large</option></select></label>
+        ${multiInputs("item", "title", item.title, "Заголовок")}
+        ${multiInputs("item", "excerpt", item.excerpt, "Короткое описание", true)}
+        ${multiInputs("item", "body", item.body, "Текст статьи", true)}
+        <label>Размер карточки<select data-field="size"><option value="medium" ${item.size === "medium" ? "selected" : ""}>medium</option><option value="large" ${item.size === "large" ? "selected" : ""}>large</option></select></label>
       </div>
     </article>
   `;
@@ -386,15 +386,15 @@ function guideCard(item, index) {
 function eventCard(item, index) {
   return `
     <article class="admin-card" data-row="events" data-index="${index}">
-      <div class="admin-card-title"><strong>${ddText(item.title, "ua")}</strong><button class="danger-button" type="button" data-remove="events" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${ddText(item.title, "ua")}</strong><button class="danger-button" type="button" data-remove="events" data-index="${index}">Удалить</button></div>
       ${imagePreview(item.image)}
-      <label class="wide">РљР°СЂС‚РёРЅРєР° РїРѕРґС–С—<input type="file" accept="image/*" data-image-list="events" data-index="${index}" data-image-key="image" /></label>
+      <label class="wide">Картинка події<input type="file" accept="image/*" data-image-list="events" data-index="${index}" data-image-key="image" /></label>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        ${multiInputs("item", "title", item.title, "РќР°Р·РІР°РЅРёРµ")}
-        <label>Р”Р°С‚Р°<input data-field="date" type="date" value="${item.date || ""}" /></label>
-        ${multiInputs("item", "location", item.location, "РњРµСЃС‚Рѕ")}
-        ${multiInputs("item", "text", item.text, "РћРїРёСЃР°РЅРёРµ", true)}
+        ${multiInputs("item", "title", item.title, "Название")}
+        <label>Дата<input data-field="date" type="date" value="${item.date || ""}" /></label>
+        ${multiInputs("item", "location", item.location, "Место")}
+        ${multiInputs("item", "text", item.text, "Описание", true)}
       </div>
     </article>
   `;
@@ -403,16 +403,16 @@ function eventCard(item, index) {
 function partnerCard(item, index) {
   return `
     <article class="admin-card" data-row="partnersList" data-index="${index}">
-      <div class="admin-card-title"><strong>${item.name}</strong><button class="danger-button" type="button" data-remove="partnersList" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${item.name}</strong><button class="danger-button" type="button" data-remove="partnersList" data-index="${index}">Удалить</button></div>
       ${imagePreview(item.logo)}
-      <label class="wide">Р›РѕРіРѕС‚РёРї РїР°СЂС‚РЅРµСЂР°<input type="file" accept="image/*" data-image-list="partnersList" data-index="${index}" data-image-key="logo" /></label>
+      <label class="wide">Логотип партнера<input type="file" accept="image/*" data-image-list="partnersList" data-index="${index}" data-image-key="logo" /></label>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        <label>РќР°Р·РІР°РЅРёРµ<input data-field="name" value="${item.name}" /></label>
-        <label>РЎР°Р№С‚<input data-field="site" value="${item.site}" /></label>
+        <label>Название<input data-field="name" value="${item.name}" /></label>
+        <label>Сайт<input data-field="site" value="${item.site}" /></label>
         <label>Текст кнопки SITE<input data-field="siteLabel" value="${item.siteLabel || "SITE"}" /></label>
-        <label>РџСЂРѕРјРѕРєРѕРґ<input data-field="promo" value="${item.promo}" /></label>
-        ${multiInputs("item", "text", item.text, "РћРїРёСЃР°РЅРёРµ", true)}
+        <label>Промокод<input data-field="promo" value="${item.promo}" /></label>
+        ${multiInputs("item", "text", item.text, "Описание", true)}
       </div>
     </article>
   `;
@@ -421,11 +421,11 @@ function partnerCard(item, index) {
 function faqCard(item, index) {
   return `
     <article class="admin-card" data-row="faq" data-index="${index}">
-      <div class="admin-card-title"><strong>${ddText(item.question, "ua")}</strong><button class="danger-button" type="button" data-remove="faq" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${ddText(item.question, "ua")}</strong><button class="danger-button" type="button" data-remove="faq" data-index="${index}">Удалить</button></div>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        ${multiInputs("item", "question", item.question, "Р’РѕРїСЂРѕСЃ")}
-        ${multiInputs("item", "answer", item.answer, "РћС‚РІРµС‚", true)}
+        ${multiInputs("item", "question", item.question, "Вопрос")}
+        ${multiInputs("item", "answer", item.answer, "Ответ", true)}
       </div>
     </article>
   `;
@@ -434,12 +434,12 @@ function faqCard(item, index) {
 function paymentCard(item, index) {
   return `
     <article class="admin-card" data-row="paymentStrip" data-index="${index}">
-      <div class="admin-card-title"><strong>${ddText(item.title, "ua") || "РћРїР»Р°С‚Р°"}</strong><button class="danger-button" type="button" data-remove="paymentStrip" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${ddText(item.title, "ua") || "Оплата"}</strong><button class="danger-button" type="button" data-remove="paymentStrip" data-index="${index}">Удалить</button></div>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        <label>РРєРѕРЅРєР°<input data-field="icon" maxlength="4" value="${item.icon || ""}" /></label>
-        ${multiInputs("item", "title", item.title, "РќР°Р·РІР°РЅРёРµ")}
-        ${multiInputs("item", "text", item.text, "РћРїРёСЃР°РЅРёРµ", true)}
+        <label>Иконка<input data-field="icon" maxlength="4" value="${item.icon || ""}" /></label>
+        ${multiInputs("item", "title", item.title, "Название")}
+        ${multiInputs("item", "text", item.text, "Описание", true)}
       </div>
     </article>
   `;
@@ -461,11 +461,11 @@ function couponCard(item, index) {
 function statCard(item, index) {
   return `
     <article class="admin-card" data-row="stats" data-index="${index}">
-      <div class="admin-card-title"><strong>${item.value || "Р¦РёС„СЂР°"}</strong><button class="danger-button" type="button" data-remove="stats" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${item.value || "Цифра"}</strong><button class="danger-button" type="button" data-remove="stats" data-index="${index}">Удалить</button></div>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        <label>Р—РЅР°С‡РµРЅРёРµ<input data-field="value" value="${item.value || ""}" /></label>
-        ${multiInputs("item", "label", item.label, "РџРѕРґРїРёСЃСЊ")}
+        <label>Значение<input data-field="value" value="${item.value || ""}" /></label>
+        ${multiInputs("item", "label", item.label, "Подпись")}
       </div>
     </article>
   `;
@@ -474,11 +474,11 @@ function statCard(item, index) {
 function advantageCard(item, index) {
   return `
     <article class="admin-card" data-row="advantages" data-index="${index}">
-      <div class="admin-card-title"><strong>${ddText(item.text, "ua") || "РџСЂРµРёРјСѓС‰РµСЃС‚РІРѕ"}</strong><button class="danger-button" type="button" data-remove="advantages" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${ddText(item.text, "ua") || "Преимущество"}</strong><button class="danger-button" type="button" data-remove="advantages" data-index="${index}">Удалить</button></div>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        <label>РРєРѕРЅРєР°<input data-field="icon" maxlength="4" value="${item.icon || ""}" /></label>
-        ${multiInputs("item", "text", item.text, "РўРµРєСЃС‚", true)}
+        <label>Иконка<input data-field="icon" maxlength="4" value="${item.icon || ""}" /></label>
+        ${multiInputs("item", "text", item.text, "Текст", true)}
       </div>
     </article>
   `;
@@ -487,11 +487,11 @@ function advantageCard(item, index) {
 function workStepCard(item, index) {
   return `
     <article class="admin-card" data-row="workSteps" data-index="${index}">
-      <div class="admin-card-title"><strong>${ddText(item.title, "ua") || "РЁР°Рі"}</strong><button class="danger-button" type="button" data-remove="workSteps" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${ddText(item.title, "ua") || "Шаг"}</strong><button class="danger-button" type="button" data-remove="workSteps" data-index="${index}">Удалить</button></div>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        ${multiInputs("item", "title", item.title, "Р—Р°РіРѕР»РѕРІРѕРє")}
-        ${multiInputs("item", "text", item.text, "РўРµРєСЃС‚", true)}
+        ${multiInputs("item", "title", item.title, "Заголовок")}
+        ${multiInputs("item", "text", item.text, "Текст", true)}
       </div>
     </article>
   `;
@@ -500,11 +500,11 @@ function workStepCard(item, index) {
 function reviewCard(item, index) {
   return `
     <article class="admin-card" data-row="reviews" data-index="${index}">
-      <div class="admin-card-title"><strong>${item.name || "РћС‚Р·С‹РІ"}</strong><button class="danger-button" type="button" data-remove="reviews" data-index="${index}">РЈРґР°Р»РёС‚СЊ</button></div>
+      <div class="admin-card-title"><strong>${item.name || "Отзыв"}</strong><button class="danger-button" type="button" data-remove="reviews" data-index="${index}">Удалить</button></div>
       <div class="admin-card-grid">
         ${visibleToggle(item)}
-        <label>РРјСЏ<input data-field="name" value="${item.name || ""}" /></label>
-        ${multiInputs("item", "text", item.text, "РўРµРєСЃС‚", true)}
+        <label>Имя<input data-field="name" value="${item.name || ""}" /></label>
+        ${multiInputs("item", "text", item.text, "Текст", true)}
       </div>
     </article>
   `;
@@ -558,13 +558,13 @@ function normalizeAdminLabels() {
     setControlLabel(control, imageLabels[control.dataset.imageList] || "Image");
   });
   document.querySelectorAll(".image-preview:not(.filled)").forEach((node) => {
-    if (node.textContent.trim()) node.textContent = "РќРµС‚ РєР°СЂС‚РёРЅРєРё";
+    if (node.textContent.trim()) node.textContent = "Нет картинки";
   });
   document.querySelectorAll("[data-remove]").forEach((button) => {
-    button.textContent = "РЈРґР°Р»РёС‚СЊ";
+    button.textContent = "Удалить";
   });
   document.querySelectorAll("[data-auto-product]").forEach((button) => {
-    button.textContent = "РђРІС‚РѕРїРµСЂРµРІРѕРґ";
+    button.textContent = "Автоперевод";
   });
 }
 
@@ -678,7 +678,7 @@ form?.addEventListener("change", async (event) => {
   if (contentImage) adminData.content[contentImage.dataset.contentImage] = src;
   if (listImage) adminData[listImage.dataset.imageList][Number(listImage.dataset.index)][listImage.dataset.imageKey] = src;
   renderAdmin();
-  setStatus("РљР°СЂС‚РёРЅРєР° Р·Р°РіСЂСѓР¶РµРЅР°. РќРµ Р·Р°Р±СѓРґСЊС‚Рµ СЃРѕС…СЂР°РЅРёС‚СЊ.");
+  setStatus("Картинка загружена. Не забудьте сохранить.");
 });
 
 loginForm?.addEventListener("submit", (event) => {
@@ -691,7 +691,7 @@ loginForm?.addEventListener("submit", (event) => {
     updateAuthView();
     return;
   }
-  if (loginError) loginError.textContent = "РќРµРІРµСЂРЅС‹Р№ Р»РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ";
+  if (loginError) loginError.textContent = "Неверный логин или пароль";
 });
 
 document.addEventListener("click", (event) => {
@@ -719,7 +719,7 @@ document.addEventListener("click", (event) => {
   if (remove) {
     adminData[remove.dataset.remove].splice(Number(remove.dataset.index), 1);
     renderAdmin();
-    setStatus("РЈРґР°Р»РµРЅРѕ. РќРµ Р·Р°Р±СѓРґСЊС‚Рµ СЃРѕС…СЂР°РЅРёС‚СЊ.");
+    setStatus("Удалено. Не забудьте сохранить.");
   }
 
   const auto = event.target.closest("[data-auto-product]");
@@ -730,22 +730,22 @@ document.addEventListener("click", (event) => {
       id: uid("category"),
       icon: "#",
       image: "",
-      title: { ua: "РќРѕРІР° РєР°С‚РµРіРѕСЂС–СЏ", en: "New category", ru: "РќРѕРІР°СЏ РєР°С‚РµРіРѕСЂРёСЏ" },
-      text: { ua: "РћРїРёСЃ РєР°С‚РµРіРѕСЂС–С—", en: "Category description", ru: "РћРїРёСЃР°РЅРёРµ РєР°С‚РµРіРѕСЂРёРё" },
+      title: { ua: "Нова категорія", en: "New category", ru: "Новая категория" },
+      text: { ua: "Опис категорії", en: "Category description", ru: "Описание категории" },
     });
     renderAdmin();
-    setStatus("РљР°С‚РµРіРѕСЂРёСЏ РґРѕР±Р°РІР»РµРЅР°.");
+    setStatus("Категория добавлена.");
   }
 
   if (event.target.closest("[data-add-payment]")) {
     adminData.paymentStrip = adminData.paymentStrip || [];
     adminData.paymentStrip.push({
       icon: "$",
-      title: { ua: "РќРѕРІРёР№ СЃРїРѕСЃС–Р±", en: "New method", ru: "РќРѕРІС‹Р№ СЃРїРѕСЃРѕР±" },
-      text: { ua: "РћРїРёСЃ РѕРїР»Р°С‚Рё", en: "Payment note", ru: "РћРїРёСЃР°РЅРёРµ РѕРїР»Р°С‚С‹" },
+      title: { ua: "Новий спосіб", en: "New method", ru: "Новый способ" },
+      text: { ua: "Опис оплати", en: "Payment note", ru: "Описание оплаты" },
     });
     renderAdmin();
-    setStatus("РџР»Р°С‚РµР¶РЅС‹Р№ РїСѓРЅРєС‚ РґРѕР±Р°РІР»РµРЅ.");
+    setStatus("Платежный пункт добавлен.");
   }
 
   if (event.target.closest("[data-add-coupon]")) {
@@ -757,46 +757,46 @@ document.addEventListener("click", (event) => {
 
   if (event.target.closest("[data-add-stat]")) {
     adminData.stats = adminData.stats || [];
-    adminData.stats.push({ value: "100+", label: { ua: "РЅРѕРІРёР№ РїРѕРєР°Р·РЅРёРє", en: "new stat", ru: "РЅРѕРІС‹Р№ РїРѕРєР°Р·Р°С‚РµР»СЊ" } });
+    adminData.stats.push({ value: "100+", label: { ua: "новий показник", en: "new stat", ru: "новый показатель" } });
     renderAdmin();
-    setStatus("РџРѕРєР°Р·Р°С‚РµР»СЊ РґРѕР±Р°РІР»РµРЅ.");
+    setStatus("Показатель добавлен.");
   }
 
   if (event.target.closest("[data-add-advantage]")) {
     adminData.advantages = adminData.advantages || [];
-    adminData.advantages.push({ icon: "вњ“", text: { ua: "РќРѕРІР° РїРµСЂРµРІР°РіР°", en: "New advantage", ru: "РќРѕРІРѕРµ РїСЂРµРёРјСѓС‰РµСЃС‚РІРѕ" } });
+    adminData.advantages.push({ icon: "✓", text: { ua: "Нова перевага", en: "New advantage", ru: "Новое преимущество" } });
     renderAdmin();
-    setStatus("РџСЂРµРёРјСѓС‰РµСЃС‚РІРѕ РґРѕР±Р°РІР»РµРЅРѕ.");
+    setStatus("Преимущество добавлено.");
   }
 
   if (event.target.closest("[data-add-work-step]")) {
     adminData.workSteps = adminData.workSteps || [];
     adminData.workSteps.push({
-      title: { ua: "РќРѕРІРёР№ РєСЂРѕРє", en: "New step", ru: "РќРѕРІС‹Р№ С€Р°Рі" },
-      text: { ua: "РћРїРёСЃ РєСЂРѕРєСѓ", en: "Step description", ru: "РћРїРёСЃР°РЅРёРµ С€Р°РіР°" },
+      title: { ua: "Новий крок", en: "New step", ru: "Новый шаг" },
+      text: { ua: "Опис кроку", en: "Step description", ru: "Описание шага" },
     });
     renderAdmin();
-    setStatus("РЁР°Рі РґРѕР±Р°РІР»РµРЅ.");
+    setStatus("Шаг добавлен.");
   }
 
   if (event.target.closest("[data-add-review]")) {
     adminData.reviews = adminData.reviews || [];
-    adminData.reviews.push({ name: "Client", text: { ua: "РќРѕРІРёР№ РІС–РґРіСѓРє", en: "New review", ru: "РќРѕРІС‹Р№ РѕС‚Р·С‹РІ" } });
+    adminData.reviews.push({ name: "Client", text: { ua: "Новий відгук", en: "New review", ru: "Новый отзыв" } });
     renderAdmin();
-    setStatus("РћС‚Р·С‹РІ РґРѕР±Р°РІР»РµРЅ.");
+    setStatus("Отзыв добавлен.");
   }
 
   if (event.target.closest("[data-add-product]")) {
     adminData.products.unshift({
       id: uid("product"),
-      name: { ua: "РќРѕРІРёР№ С‚РѕРІР°СЂ", en: "", ru: "" },
-      description: { ua: "РћРїРёСЃ С‚РѕРІР°СЂСѓ", en: "", ru: "" },
+      name: { ua: "Новий товар", en: "", ru: "" },
+      description: { ua: "Опис товару", en: "", ru: "" },
       details: { ua: "Детальное описание товара", en: "", ru: "" },
       category: "social",
       subcategory: "",
-      categoryLabel: { ua: "РЎРѕС†РјРµСЂРµР¶С–", en: "", ru: "" },
+      categoryLabel: { ua: "Соцмережі", en: "", ru: "" },
       badge: "NN",
-      status: { ua: "Р’ РЅР°СЏРІРЅРѕСЃС‚С–", en: "", ru: "" },
+      status: { ua: "В наявності", en: "", ru: "" },
       price: 25,
       stockQty: 10,
       countryFlag: "",
@@ -806,26 +806,26 @@ document.addEventListener("click", (event) => {
       image: "",
     });
     autoProduct(0);
-    setStatus("РўРѕРІР°СЂ РґРѕР±Р°РІР»РµРЅ.");
+    setStatus("Товар добавлен.");
   }
 
   if (event.target.closest("[data-add-guide]")) {
-    adminData.guides.unshift({ id: uid("news"), title: { ua: "РќРѕРІР° РЅРѕРІРёРЅР°", en: "New post", ru: "РќРѕРІР°СЏ РЅРѕРІРѕСЃС‚СЊ" }, excerpt: { ua: "РљРѕСЂРѕС‚РєРёР№ РѕРїРёСЃ", en: "Short excerpt", ru: "РљРѕСЂРѕС‚РєРѕРµ РѕРїРёСЃР°РЅРёРµ" }, body: { ua: "РўРµРєСЃС‚ РЅРѕРІРёРЅРё", en: "Article text", ru: "РўРµРєСЃС‚ РЅРѕРІРѕСЃС‚Рё" }, category: "arbitraj", size: "medium", image: "" });
+    adminData.guides.unshift({ id: uid("news"), title: { ua: "Нова новина", en: "New post", ru: "Новая новость" }, excerpt: { ua: "Короткий опис", en: "Short excerpt", ru: "Короткое описание" }, body: { ua: "Текст новини", en: "Article text", ru: "Текст новости" }, category: "arbitraj", size: "medium", image: "" });
     renderAdmin();
   }
 
   if (event.target.closest("[data-add-event]")) {
-    adminData.events.unshift({ id: uid("event"), title: { ua: "РќРѕРІР° РїРѕРґС–СЏ", en: "New event", ru: "РќРѕРІРѕРµ СЃРѕР±С‹С‚РёРµ" }, date: "", location: { ua: "Online", en: "Online", ru: "Online" }, text: { ua: "РћРїРёСЃ РїРѕРґС–С—", en: "Event description", ru: "РћРїРёСЃР°РЅРёРµ СЃРѕР±С‹С‚РёСЏ" }, image: "" });
+    adminData.events.unshift({ id: uid("event"), title: { ua: "Нова подія", en: "New event", ru: "Новое событие" }, date: "", location: { ua: "Online", en: "Online", ru: "Online" }, text: { ua: "Опис події", en: "Event description", ru: "Описание события" }, image: "" });
     renderAdmin();
   }
 
   if (event.target.closest("[data-add-partner]")) {
-    adminData.partnersList.unshift({ id: uid("partner"), name: "New partner", site: "https://example.com", siteLabel: "SITE", promo: "DAMAGE", text: { ua: "РћРїРёСЃ РїР°СЂС‚РЅРµСЂР°", en: "Partner description", ru: "РћРїРёСЃР°РЅРёРµ РїР°СЂС‚РЅРµСЂР°" }, logo: "" });
+    adminData.partnersList.unshift({ id: uid("partner"), name: "New partner", site: "https://example.com", siteLabel: "SITE", promo: "DAMAGE", text: { ua: "Опис партнера", en: "Partner description", ru: "Описание партнера" }, logo: "" });
     renderAdmin();
   }
 
   if (event.target.closest("[data-add-faq]")) {
-    adminData.faq.push({ question: { ua: "РќРѕРІРµ РїРёС‚Р°РЅРЅСЏ", en: "New question", ru: "РќРѕРІС‹Р№ РІРѕРїСЂРѕСЃ" }, answer: { ua: "Р’С–РґРїРѕРІС–РґСЊ.", en: "Answer.", ru: "РћС‚РІРµС‚." } });
+    adminData.faq.push({ question: { ua: "Нове питання", en: "New question", ru: "Новый вопрос" }, answer: { ua: "Відповідь.", en: "Answer.", ru: "Ответ." } });
     renderAdmin();
   }
 });

@@ -469,3 +469,14 @@ html body.admin-body .admin-card-title strong {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* Absolute final Roboto pass across admin */
+html body.admin-body,
+html body.admin-body *,
+html body.admin-body *::before,
+html body.admin-body *::after,
+html body.admin-body button,
+html body.admin-body input,
+html body.admin-body textarea,
+html body.admin-body select {
+  font-family: Roboto, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}

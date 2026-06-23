@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
 :root {
   --site-width: 1500px;
@@ -9452,297 +9452,218 @@ html[data-theme="light"] body:not(.admin-body) .shop-page .shop-category-card.ac
   }
 }
 
-/* Light theme: blue digital agency skin */
-html[data-theme="light"] {
-  --bg: #edf5ff !important;
-  --asphalt: #f7fbff !important;
-  --graphite: #ffffff !important;
-  --panel: #ffffff !important;
-  --panel-soft: #eef5ff !important;
-  --line: rgba(22, 94, 255, 0.18) !important;
-  --text: #07162f !important;
-  --muted: #52637d !important;
-  --acid: #156dff !important;
-  --acid-strong: #004cff !important;
-  --cyan: #00b7ff !important;
-  --red: #156dff !important;
-  --red-soft: #4f8dff !important;
-  --violet: #573cff !important;
-  --blue: #156dff !important;
-  --orange: #00b7ff !important;
-  --danger: #156dff !important;
-  --shadow: 0 28px 80px rgba(18, 86, 196, 0.18), 0 0 48px rgba(21, 109, 255, 0.1) !important;
+/* Work steps subtle rounding */
+body:not(.admin-body) .work-steps article,
+html[data-theme="light"] body:not(.admin-body) .work-steps article {
+  overflow: hidden !important;
+  border-radius: 8px !important;
 }
 
-html[data-theme="light"] body:not(.admin-body),
-html[data-theme="light"] body:not(.admin-body) * {
-  font-family: Inter, Montserrat, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+body:not(.admin-body) .work-steps article::before,
+html[data-theme="light"] body:not(.admin-body) .work-steps article::before {
+  border-radius: 8px !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) {
-  color: #07162f !important;
-  background:
-    radial-gradient(circle at 18% 10%, rgba(21, 109, 255, 0.18), transparent 24%),
-    radial-gradient(circle at 86% 8%, rgba(87, 60, 255, 0.22), transparent 26%),
-    radial-gradient(circle at 76% 44%, rgba(0, 183, 255, 0.2), transparent 30%),
-    linear-gradient(135deg, #f9fcff 0%, #edf5ff 42%, #dcecff 100%) !important;
-  background-size: auto !important;
-}
-
-html[data-theme="light"] body:not(.admin-body)::before {
-  background-image:
-    linear-gradient(rgba(21, 109, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21, 109, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(125deg, transparent 0 48%, rgba(21, 109, 255, 0.12) 48% 49%, transparent 49%) !important;
-  background-size: 42px 42px, 42px 42px, auto !important;
-  mix-blend-mode: normal !important;
-  opacity: 0.86 !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .site-header {
-  color: #07162f !important;
-  background: rgba(255, 255, 255, 0.78) !important;
-  border: 1px solid rgba(21, 109, 255, 0.26) !important;
-  box-shadow: 0 18px 56px rgba(16, 75, 180, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(18px) saturate(1.2) !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .brand-mark,
-html[data-theme="light"] body:not(.admin-body) .graffiti-badge,
-html[data-theme="light"] body:not(.admin-body) .advantage-grid span,
+body:not(.admin-body) .work-icon,
 html[data-theme="light"] body:not(.admin-body) .work-icon {
-  color: #ffffff !important;
-  background: linear-gradient(135deg, #0a7cff, #573cff) !important;
-  border-color: rgba(255, 255, 255, 0.34) !important;
-  box-shadow: 0 12px 32px rgba(21, 109, 255, 0.34), 0 0 28px rgba(0, 183, 255, 0.22) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34), 0 0 18px rgba(198, 255, 0, 0.22) !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) .main-nav,
-html[data-theme="light"] body:not(.admin-body) .lang-switch,
-html[data-theme="light"] body:not(.admin-body) .telegram-pill,
-html[data-theme="light"] body:not(.admin-body) .theme-toggle,
-html[data-theme="light"] body:not(.admin-body) .profile-pill,
-html[data-theme="light"] body:not(.admin-body) .cart-button {
-  color: #07162f !important;
-  background: rgba(255, 255, 255, 0.72) !important;
-  border: 1px solid rgba(21, 109, 255, 0.2) !important;
-  box-shadow: 0 12px 28px rgba(20, 87, 190, 0.1) !important;
+/* Shop list alignment with category grid */
+body:not(.admin-body).shop-page .catalog-section,
+body:not(.admin-body) .shop-page .catalog-section,
+html[data-theme="light"] body:not(.admin-body).shop-page .catalog-section,
+html[data-theme="light"] body:not(.admin-body) .shop-page .catalog-section {
+  width: min(calc(100% - 64px), 1350px) !important;
+  max-width: 1350px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) .main-nav a:hover,
-html[data-theme="light"] body:not(.admin-body) .main-nav a.active,
-html[data-theme="light"] body:not(.admin-body) .lang-switch button.active,
-html[data-theme="light"] body:not(.admin-body) .cart-button strong {
-  color: #ffffff !important;
-  background: linear-gradient(135deg, #0a7cff, #573cff) !important;
-  border-color: rgba(21, 109, 255, 0.34) !important;
+body:not(.admin-body).shop-page .shop-market-main,
+body:not(.admin-body) .shop-page .shop-market-main,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-market-main,
+html[data-theme="light"] body:not(.admin-body) .shop-page .shop-market-main {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) .hero:not(.inner-hero),
-html[data-theme="light"] body:not(.admin-body) .final-cta {
-  color: #ffffff !important;
-  background:
-    radial-gradient(circle at 72% 24%, rgba(21, 109, 255, 0.52), transparent 34%),
-    radial-gradient(circle at 86% 62%, rgba(87, 60, 255, 0.34), transparent 30%),
-    linear-gradient(135deg, #03112a 0%, #061a44 48%, #092a77 100%) !important;
-  border: 1px solid rgba(74, 144, 255, 0.5) !important;
-  box-shadow: 0 30px 90px rgba(4, 37, 116, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+body:not(.admin-body).shop-page .shop-category-grid,
+body:not(.admin-body).shop-page .shop-controls,
+body:not(.admin-body).shop-page [data-products],
+body:not(.admin-body).shop-page .product-section-group,
+body:not(.admin-body) .shop-page .shop-category-grid,
+body:not(.admin-body) .shop-page .shop-controls,
+body:not(.admin-body) .shop-page [data-products],
+body:not(.admin-body) .shop-page .product-section-group,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-category-grid,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-controls,
+html[data-theme="light"] body:not(.admin-body).shop-page [data-products],
+html[data-theme="light"] body:not(.admin-body).shop-page .product-section-group,
+html[data-theme="light"] body:not(.admin-body) .shop-page .shop-category-grid,
+html[data-theme="light"] body:not(.admin-body) .shop-page .shop-controls,
+html[data-theme="light"] body:not(.admin-body) .shop-page [data-products],
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-section-group {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) .hero:not(.inner-hero) h1,
-html[data-theme="light"] body:not(.admin-body) .hero:not(.inner-hero) .lead,
-html[data-theme="light"] body:not(.admin-body) .final-cta h2,
-html[data-theme="light"] body:not(.admin-body) .final-cta p {
-  color: #ffffff !important;
+body:not(.admin-body).shop-page .shop-controls,
+body:not(.admin-body) .shop-page .shop-controls,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-controls,
+html[data-theme="light"] body:not(.admin-body) .shop-page .shop-controls {
+  margin-top: 0 !important;
+  margin-bottom: 28px !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) .inner-hero,
-html[data-theme="light"] body:not(.admin-body) .section,
-html[data-theme="light"] body:not(.admin-body) .split-section,
-html[data-theme="light"] body:not(.admin-body) .footer {
-  color: #07162f !important;
-  background: transparent !important;
+body:not(.admin-body).shop-page .product-section-group,
+body:not(.admin-body) .shop-page .product-section-group,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-section-group,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-section-group {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) h1,
-html[data-theme="light"] body:not(.admin-body) h2,
-html[data-theme="light"] body:not(.admin-body) h3,
-html[data-theme="light"] body:not(.admin-body) h4,
-html[data-theme="light"] body:not(.admin-body) .section-heading h2,
-html[data-theme="light"] body:not(.admin-body) .inner-hero h1,
-html[data-theme="light"] body:not(.admin-body) .product-detail-copy h1 {
-  color: #07162f !important;
-  font-weight: 850 !important;
-  letter-spacing: 0 !important;
-  text-shadow: none !important;
+body:not(.admin-body).shop-page .product-card,
+body:not(.admin-body) .shop-page .product-card,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-card,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) .hero:not(.inner-hero) h1 strong,
-html[data-theme="light"] body:not(.admin-body) .hero:not(.inner-hero) h1 span,
-html[data-theme="light"] body:not(.admin-body) .eyebrow,
-html[data-theme="light"] body:not(.admin-body) .section-heading .eyebrow {
-  color: #156dff !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) p,
-html[data-theme="light"] body:not(.admin-body) .lead,
-html[data-theme="light"] body:not(.admin-body) small,
-html[data-theme="light"] body:not(.admin-body) .product-info p,
-html[data-theme="light"] body:not(.admin-body) .content-card p,
-html[data-theme="light"] body:not(.admin-body) .article-body {
-  color: #52637d !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .stats-strip div,
-html[data-theme="light"] body:not(.admin-body) .payment-strip article,
-html[data-theme="light"] body:not(.admin-body) .shop-category-card,
-html[data-theme="light"] body:not(.admin-body) .product-card,
-html[data-theme="light"] body:not(.admin-body) .page-card,
-html[data-theme="light"] body:not(.admin-body) .content-card,
-html[data-theme="light"] body:not(.admin-body) .advantage-grid article,
-html[data-theme="light"] body:not(.admin-body) .work-steps article,
-html[data-theme="light"] body:not(.admin-body) .review-grid article,
-html[data-theme="light"] body:not(.admin-body) .contact-form,
-html[data-theme="light"] body:not(.admin-body) .faq details,
-html[data-theme="light"] body:not(.admin-body) .shop-controls,
-html[data-theme="light"] body:not(.admin-body) .product-detail-text,
-html[data-theme="light"] body:not(.admin-body) .cart-panel {
-  color: #07162f !important;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(246, 250, 255, 0.9)) !important;
-  border: 1px solid rgba(21, 109, 255, 0.18) !important;
-  box-shadow: 0 18px 48px rgba(19, 83, 188, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .shop-category-card:hover,
-html[data-theme="light"] body:not(.admin-body) .shop-category-card.active,
-html[data-theme="light"] body:not(.admin-body) .product-card:hover,
-html[data-theme="light"] body:not(.admin-body) .content-card:hover,
-html[data-theme="light"] body:not(.admin-body) .page-card:hover {
-  border-color: rgba(21, 109, 255, 0.42) !important;
-  box-shadow: 0 22px 58px rgba(21, 109, 255, 0.18), 0 0 0 1px rgba(21, 109, 255, 0.12) !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .button,
-html[data-theme="light"] body:not(.admin-body) button,
-html[data-theme="light"] body:not(.admin-body) .product-card button,
-html[data-theme="light"] body:not(.admin-body) .drop-card button,
-html[data-theme="light"] body:not(.admin-body) .checkout-button {
-  border-radius: 10px !important;
-  font-weight: 850 !important;
-  letter-spacing: 0 !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .button.primary,
-html[data-theme="light"] body:not(.admin-body) .blue-button,
-html[data-theme="light"] body:not(.admin-body) .product-card button[data-add-cart]:not(.add-cart-mini),
-html[data-theme="light"] body:not(.admin-body) .checkout-button,
-html[data-theme="light"] body:not(.admin-body) .telegram-section .blue-button {
-  color: #ffffff !important;
-  background: linear-gradient(135deg, #0a7cff, #573cff) !important;
-  border: 1px solid rgba(21, 109, 255, 0.4) !important;
-  box-shadow: 0 14px 34px rgba(21, 109, 255, 0.28), 0 0 22px rgba(0, 183, 255, 0.18) !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .button.ghost,
-html[data-theme="light"] body:not(.admin-body) .product-card .telegram-mini,
-html[data-theme="light"] body:not(.admin-body) .add-cart-mini,
-html[data-theme="light"] body:not(.admin-body) .partner-card .button,
-html[data-theme="light"] body:not(.admin-body) .content-card.partner-card .button {
-  color: #0a4bd8 !important;
-  background: rgba(255, 255, 255, 0.72) !important;
-  border: 1px solid rgba(21, 109, 255, 0.26) !important;
-  box-shadow: 0 10px 24px rgba(21, 109, 255, 0.1) !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .tag,
-html[data-theme="light"] body:not(.admin-body) .stock,
-html[data-theme="light"] body:not(.admin-body) .product-stock-col strong,
-html[data-theme="light"] body:not(.admin-body) .payment-badges span,
-html[data-theme="light"] body:not(.admin-body) .product-detail-meta span,
-html[data-theme="light"] body:not(.admin-body) .product-detail-meta strong {
-  color: #0a4bd8 !important;
-  background: #eaf3ff !important;
-  border: 1px solid rgba(21, 109, 255, 0.2) !important;
-  box-shadow: none !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .shop-category-icon,
+/* Remove heavy placeholder letter shadows site-wide */
+body:not(.admin-body) .placeholder-media,
+body:not(.admin-body) .product-image.placeholder-media,
+body:not(.admin-body) .shop-page .product-card .product-image.placeholder-media,
+body:not(.admin-body) .drop-row .product-image.placeholder-media,
+body:not(.admin-body) .product-detail-media .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .placeholder-media,
 html[data-theme="light"] body:not(.admin-body) .product-image.placeholder-media,
-html[data-theme="light"] body:not(.admin-body) .product-detail-media .product-image {
-  color: #ffffff !important;
-  background:
-    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.35), transparent 28%),
-    linear-gradient(135deg, #0a7cff, #573cff) !important;
-  border: 1px solid rgba(21, 109, 255, 0.28) !important;
-  box-shadow: 0 18px 52px rgba(21, 109, 255, 0.18) !important;
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-card .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .drop-row .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .product-detail-media .product-image.placeholder-media {
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+  filter: none !important;
+  font-size: clamp(20px, 2.1vw, 30px) !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) .shop-category-card em,
-html[data-theme="light"] body:not(.admin-body).shop-page .shop-category-card em,
-html[data-theme="light"] body:not(.admin-body) .shop-page .shop-category-card em {
-  background: rgba(21, 109, 255, 0.08) !important;
-  border-color: rgba(21, 109, 255, 0.24) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+body:not(.admin-body) .shop-page .product-card .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-card .product-image.placeholder-media {
+  font-size: clamp(20px, 1.9vw, 28px) !important;
 }
 
-html[data-theme="light"] body:not(.admin-body) .shop-category-card em::before,
-html[data-theme="light"] body:not(.admin-body).shop-page .shop-category-card em::before,
-html[data-theme="light"] body:not(.admin-body) .shop-page .shop-category-card em::before {
-  color: #156dff !important;
+body:not(.admin-body) .product-image.placeholder-media::before,
+body:not(.admin-body) .product-image.placeholder-media::after,
+body:not(.admin-body) .placeholder-media::before,
+body:not(.admin-body) .placeholder-media::after,
+html[data-theme="light"] body:not(.admin-body) .product-image.placeholder-media::before,
+html[data-theme="light"] body:not(.admin-body) .product-image.placeholder-media::after,
+html[data-theme="light"] body:not(.admin-body) .placeholder-media::before,
+html[data-theme="light"] body:not(.admin-body) .placeholder-media::after {
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+  filter: none !important;
+}
+/* Global Roboto font */
+html,
+body,
+body *,
+button,
+input,
+textarea,
+select {
+  font-family: Roboto, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
+/* Product placeholder letters: lighter clean weight */
+body:not(.admin-body) .placeholder-media,
+body:not(.admin-body) .product-image.placeholder-media,
+body:not(.admin-body) .shop-page .product-card .product-image.placeholder-media,
+body:not(.admin-body) .drop-row .product-image.placeholder-media,
+body:not(.admin-body) .product-detail-media .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-card .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .drop-row .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .product-detail-media .product-image.placeholder-media {
+  color: #111315 !important;
+  font-family: Roboto, Arial, ui-sans-serif, system-ui, sans-serif !important;
+  font-size: clamp(18px, 1.75vw, 25px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+  filter: none !important;
+}
+
+body:not(.admin-body) .shop-page .product-card .product-image.placeholder-media,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-card .product-image.placeholder-media {
+  font-size: clamp(18px, 1.55vw, 23px) !important;
+  font-weight: 800 !important;
+}
+/* Absolute final Roboto pass across storefront */
+html body,
+html body *,
+html body *::before,
+html body *::after,
+html button,
+html input,
+html textarea,
+html select,
+html .button,
+html .brand,
+html .main-nav a,
+html .cart-button,
+html .telegram-pill,
+html .theme-toggle,
+html .profile-pill,
+html .tag,
+html .stock,
+html .placeholder-media,
+html .graffiti-badge,
+html .final-cta::before,
+html .final-cta::after {
+  font-family: Roboto, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+/* Light theme selected category checkmark override */
 html[data-theme="light"] body:not(.admin-body) .shop-category-card.active em,
 html[data-theme="light"] body:not(.admin-body).shop-page .shop-category-card.active em,
 html[data-theme="light"] body:not(.admin-body) .shop-page .shop-category-card.active em {
-  background: linear-gradient(135deg, #0a7cff, #573cff) !important;
-  border-color: rgba(21, 109, 255, 0.38) !important;
-  box-shadow: 0 12px 28px rgba(21, 109, 255, 0.3) !important;
+  position: relative !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  background: #c6ff00 !important;
+  border-color: #c6ff00 !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
 }
 
 html[data-theme="light"] body:not(.admin-body) .shop-category-card.active em::before,
 html[data-theme="light"] body:not(.admin-body).shop-page .shop-category-card.active em::before,
 html[data-theme="light"] body:not(.admin-body) .shop-page .shop-category-card.active em::before {
-  color: #ffffff !important;
+  content: "\2713" !important;
+  display: block !important;
+  color: #2b3033 !important;
+  font-family: Roboto, Arial, ui-sans-serif, system-ui, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
-
-html[data-theme="light"] body:not(.admin-body) input,
-html[data-theme="light"] body:not(.admin-body) textarea,
-html[data-theme="light"] body:not(.admin-body) select {
-  color: #07162f !important;
-  background: rgba(255, 255, 255, 0.82) !important;
-  border: 1px solid rgba(21, 109, 255, 0.22) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92) !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) input:focus,
-html[data-theme="light"] body:not(.admin-body) textarea:focus,
-html[data-theme="light"] body:not(.admin-body) select:focus {
-  border-color: rgba(21, 109, 255, 0.58) !important;
-  box-shadow: 0 0 0 4px rgba(21, 109, 255, 0.12) !important;
-  outline: none !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .telegram-section,
-html[data-theme="light"] body:not(.admin-body) .partner-cta {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(236, 246, 255, 0.86)) !important;
-  border: 1px solid rgba(21, 109, 255, 0.2) !important;
-  box-shadow: 0 22px 64px rgba(21, 109, 255, 0.14) !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .telegram-section .graffiti-badge {
-  color: #ffffff !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) .partner-card strong,
-html[data-theme="light"] body:not(.admin-body) .content-card.partner-card strong {
-  color: #ffffff !important;
-  background: linear-gradient(135deg, #0a7cff, #573cff) !important;
-  border-color: rgba(21, 109, 255, 0.34) !important;
-}
-
-html[data-theme="light"] body:not(.admin-body) :is(h1, h2, h3, h4, p, small, a, button, input, textarea, select, .button, .brand, .main-nav a, .cart-button, .telegram-pill, .theme-toggle, .profile-pill, .tag, .stock) {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-}
-
